@@ -1,6 +1,6 @@
 import React from 'react'
-import searchIcon from "../assets/icons/SearchIcon"
-import cartIcon from "../assets/icons/ShoppingCartIcon"
+import searchIcon from "../assets/icons/SearchIcon.svg"
+import cartIcon from "../assets/icons/ShoppingCartIcon.svg"
 
 const Layout = props => {
 return (

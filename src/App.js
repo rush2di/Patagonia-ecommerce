@@ -1,8 +1,11 @@
 import React from 'react';
+import Layout from './components/layout'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
+      <Layout>
+      </Layout>
     </div>
   );
 }
