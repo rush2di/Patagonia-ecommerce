@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import searchIcon from "../assets/icons/SearchIcon.svg";
 import cartIcon from "../assets/icons/ShoppingCartIcon.svg";
+import Logo from "../assets/icons/logo.svg";
 import { DataContext } from "../context/dataContext";
 
 const Layout = props => {
@@ -22,24 +23,34 @@ const NavBar = () => {
   });
 
   return (
-    <React.Fragment>
-      <div className="head--msg">FREE SHIPPING ON ALL ORDERS OVER $450.</div>
+    <div className="head">
+      <div className="head--msg">
+        <div className="container">
+          <span>FREE SHIPPING ON ALL ORDERS OVER $450.</span>
+          <button>EN</button>
+          <button>SIGN IN</button>
+        </div>
+      </div>
       <nav className="nav">
-        <div className="nav--Logo">Logo</div>
-        <ul className="nav--items">
-          <li>Surfboards</li>
-          {categoriesMapper}
-        </ul>
-        <div className="nav--icons">
-          <button>
-            <img src={searchIcon} />
-          </button>
-          <button>
-            <img src={cartIcon} />
-          </button>
+        <div className="container">
+          <div className="nav--Logo">
+            <img src={Logo} />
+          </div>
+          <ul className="nav--items">
+            <li>Surfboards</li>
+            {categoriesMapper}
+          </ul>
+          <div className="nav--icons">
+            <button>
+              <img src={searchIcon} />
+            </button>
+            <button>
+              <img src={cartIcon} />
+            </button>
+          </div>
         </div>
       </nav>
-    </React.Fragment>
+    </div>
   );
 };
 

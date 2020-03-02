@@ -1,0 +1,5 @@
+@mixin nav-flex($flex-position) {
+  display: flex;
+  align-items: center;
+  justify-content: $flex-position;
+}
