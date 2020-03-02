@@ -8,17 +8,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-family: $font-one;
 }
-
 .container {
   width: 1200px;
   margin: 0 auto;
 }
+.main {
+  min-height: calc(100vh - 120px);
+  background: $bg-color;
+}
 
-////// Navbar & Footer
+/////// Navbar
 .head {
   display: block;
   min-width: 100%;
@@ -52,6 +54,7 @@ html {
   .nav {
     width: 100%;
     height: 5rem;
+    background: white;
     .container {
       height: 100%;
       @include nav-flex(space-between);
@@ -73,8 +76,9 @@ html {
       @include nav-flex(center);
       button {
         background: transparent;
-        border: 0;
         margin-left: 1rem;
+        border: 0;
+        cursor: pointer;
         img {
           width: 25px;
         }
@@ -83,7 +87,16 @@ html {
             width: 40px;
           }
         }
+        &:hover {
+          img {
+            opacity: 0.7;
+          }
+        }
       }
     }
   }
+}
+
+/////// Footer
+.footer {
 }

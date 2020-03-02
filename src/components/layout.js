@@ -55,5 +55,41 @@ const NavBar = () => {
 };
 
 const Footer = () => {
-  return <div className="footer">footer goes here</div>;
+  const footerItems = [
+    "Contact Us",
+    "FAQ's",
+    "Returns",
+    "Warranty",
+    "Surfboards",
+    "Registration",
+    "Safety Notifications",
+    "Terms of Use",
+    "Counterfeit",
+    "Awareness",
+    "Careers"
+  ];
+  const footerItemsMapper = footerItems.map((item, index) => {
+    return <li key={index + "item"}>{item}</li>;
+  });
+
+  return (
+    <div className="footer">
+      <div className="container">
+        <div className="footer--grid-wrapper">
+          <div className="footer--gridbox-lt">
+            <form>
+              <input type="text" placeholder="Join Our Newslettre" />
+              <button>Join</button>
+            </form>
+            <span>By submitting your email address you agree to the </span>
+            <a href="#">Terms & Conditions</a>
+          </div>
+          <div className="footer--gridbox-rg">
+            <ul>{footerItemsMapper}</ul>
+            <span>© 2020. Patagonia Surfboards. All Rights Reserved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };

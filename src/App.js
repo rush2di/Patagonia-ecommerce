@@ -6,7 +6,7 @@ import Home from "./components/home";
 const App = () => {
   return (
     <DataContextProvider>
-      <div className="App">
+      <div className="main">
         <Home />
       </div>
     </DataContextProvider>
