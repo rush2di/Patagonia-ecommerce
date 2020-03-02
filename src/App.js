@@ -1,13 +1,16 @@
-import React from 'react';
-import Layout from './components/layout'
+import React from "react";
+import Layout from "./components/layout";
+import DataContextProvider from "./context/dataContext";
+import Home from "./components/home";
 
 const App = () => {
   return (
-    <div className="App">
-      <Layout>
-      </Layout>
-    </div>
+    <DataContextProvider>
+      <div className="App">
+        <Home />
+      </div>
+    </DataContextProvider>
   );
-}
+};
 
 export default App;
