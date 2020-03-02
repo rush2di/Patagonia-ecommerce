@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./components/layout";
+import "./styles/index.scss";
 import DataContextProvider from "./context/dataContext";
 import Home from "./components/home";
 
