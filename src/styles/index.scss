@@ -63,13 +63,14 @@ html {
       width: 170px;
       display: inline-block;
     }
-    &--items {
+    &--items {      
+      font-family: $font-two;
+      font-weight: 600;      
+      font-size: .85rem;
       list-style: none;
       display: flex;
-      font-family: $font-two;
-      font-weight: 600;
       li {
-        margin: 0 1rem;
+        margin: 0 1.5rem;
       }
     }
     &--icons {
