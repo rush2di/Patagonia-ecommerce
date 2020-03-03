@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import searchIcon from "../assets/icons/SearchIcon.svg";
 import cartIcon from "../assets/icons/ShoppingCartIcon.svg";
 import Logo from "../assets/icons/logo.svg";
+import facebook from "../assets/icons/facebook.svg";
+import instagram from "../assets/icons/instagram.svg";
+import twitter from "../assets/icons/twitter.svg";
+import youtube from "../assets/icons/youtube.svg";
 import { DataContext } from "../context/dataContext";
 
 const Layout = props => {
@@ -68,15 +72,23 @@ const Footer = () => {
     "Awareness",
     "Careers"
   ];
+  const socialIcons = [facebook, instagram, twitter, youtube];
   const footerItemsMapper = footerItems.map((item, index) => {
     return <li key={index + "item"}>{item}</li>;
+  });
+  const socialIconsMapper = socialIcons.map((icon, index) => {
+    return (
+      <li key={index + "icon"}>
+        <img src={icon} />
+      </li>
+    );
   });
 
   return (
     <div className="footer">
       <div className="container">
         <div className="footer--grid-wrapper">
-          <div className="footer--gridbox-lt">
+          <div className="footer--gridbox-ft">
             <form>
               <input type="text" placeholder="Join Our Newslettre" />
               <button>Join</button>
@@ -84,9 +96,13 @@ const Footer = () => {
             <span>By submitting your email address you agree to the </span>
             <a href="#">Terms & Conditions</a>
           </div>
-          <div className="footer--gridbox-rg">
+          <div className="footer--gridbox-sec">
             <ul>{footerItemsMapper}</ul>
             <span>© 2020. Patagonia Surfboards. All Rights Reserved</span>
+          </div>
+          <div className="footer--gridbox-thr">
+            <span>Find Us On :</span>
+            <ul>{socialIconsMapper}</ul>
           </div>
         </div>
       </div>
