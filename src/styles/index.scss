@@ -63,10 +63,10 @@ html {
       width: 170px;
       display: inline-block;
     }
-    &--items {      
+    &--items {
       font-family: $font-two;
-      font-weight: 600;      
-      font-size: .85rem;
+      font-weight: 600;
+      font-size: 0.85rem;
       list-style: none;
       display: flex;
       li {
@@ -190,6 +190,47 @@ html {
       &:hover img {
         opacity: 0.7;
       }
+    }
+  }
+}
+
+/////// Main --Landing-Page
+
+.main {
+  &--hero {
+    height: 535px;
+  }
+  &--hero-over {
+    width: 100%;
+    height: 100%;
+    background: #00000075;
+    position: relative;
+  }
+  &--hero-over-txt {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-left: 1rem;
+    font-family: $font-two;
+    color: white;
+    top: 4rem;
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 900;
+    }
+    p {
+      letter-spacing: 0.1rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    button {
+      background: #43c50d;
+      font-weight: 700;
+      padding: 0.5rem 0.65rem;
+      color: white;
+      width: 150px;
+      height: 45px;
+      border: 0;
     }
   }
 }
