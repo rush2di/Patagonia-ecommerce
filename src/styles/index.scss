@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 @import "./variabls";
 @import "./mixins";
@@ -198,39 +198,61 @@ html {
 
 .main {
   &--hero {
-    height: 535px;
+    height: 550px;
   }
   &--hero-over {
     width: 100%;
     height: 100%;
-    background: #00000075;
+    font-family: $font-two;
+    color: white;
+    background: linear-gradient(0deg, #0e64968a, transparent);
     position: relative;
   }
   &--hero-over-txt {
     display: flex;
     position: absolute;
     flex-direction: column;
-    margin-left: 1rem;
-    font-family: $font-two;
-    color: white;
-    top: 4rem;
+    top: 5rem;
+    left: 5rem;
     h1 {
-      font-size: 2.75rem;
+      font-size: 3rem;
       font-weight: 900;
+      line-height: 1.25;
     }
     p {
       letter-spacing: 0.1rem;
       font-weight: 300;
+      font-size: 0.95rem;
+      margin-left: 0.5rem;
       margin-bottom: 3rem;
     }
     button {
-      background: #43c50d;
-      font-weight: 700;
-      padding: 0.5rem 0.65rem;
-      color: white;
+      background: #5cce06;
+      letter-spacing: 0.5px;
+      margin-left: 0.5rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: #fff494;
+      cursor: pointer;
       width: 150px;
-      height: 45px;
+      height: 50px;
       border: 0;
+      &:hover {
+        background: #49af1a;
+      }
+    }
+  }
+  &--hero-over-comp {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    text-align: right;
+    font-weight: 300;
+    line-height: 1.5;
+    right: 5rem;
+    bottom: 1rem;
+    span:last-of-type {
+      font-weight: 700;
     }
   }
 }

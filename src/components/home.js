@@ -14,7 +14,11 @@ const Home = props => {
                 THE WORKS
               </h1>
               <p>ITS ALL FUN AND GAMES UNTIL YOU CATCH TOO MUCH AIR</p>
-              <button>DISCOVER SOFTECH</button>
+              <button>MASON TWIN LIME</button>
+            </div>
+            <div className="main--hero-over-comp">
+              <span>TAKE A DEEPER LOOK AT THE</span>
+              <span>SOFTECH SURFBOARDS</span>
             </div>
           </div>
         </div>
