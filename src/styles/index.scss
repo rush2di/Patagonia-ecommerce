@@ -99,6 +99,7 @@ html {
 .footer {
   background: #151515;
   font-family: $font-two;
+  position: relative;
   color: #f1f1f1;
   padding: 1.5rem 0;
   height: 12rem;
@@ -109,7 +110,7 @@ html {
     align-items: center;
     justify-content: center;
     line-height: 2;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 400;
     li {
       margin: 0 0.5rem;
@@ -144,7 +145,7 @@ html {
     }
     span,
     a {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       color: $txt-white;
     }
     span {
@@ -162,9 +163,10 @@ html {
     align-items: center;
     height: 100%;
     span {
-      margin-bottom: -1.5rem;
       color: #808080;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      position: absolute;
+      bottom: 0.5rem;
     }
   }
   &--gridbox-thr {
@@ -176,7 +178,7 @@ html {
     span {
       margin: 0.6rem 0 0.5rem;
       font-weight: 200;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
     ul {
       justify-content: space-evenly;
