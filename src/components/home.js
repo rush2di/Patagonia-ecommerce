@@ -89,6 +89,16 @@ const Home = props => {
           />
         </div>
       </div>
+      <div className="main--section-instagram">
+        <div className="container">
+          <h3>FOLLOW US ON INSTAGRAM</h3>
+          <div className="instagram--grid">
+            <div className="instagram--img"></div>
+            <div className="instagram--img"></div>
+            <div className="instagram--img"></div>
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
