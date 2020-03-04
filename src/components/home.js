@@ -8,34 +8,36 @@ import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
 import axios from "axios";
 
-const userGraph = "graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b";
-const vars = '&variables={"id":"233724914","first":6}';
-const cors = "https://cors-anywhere.herokuapp.com/";
+const userGraph = "472f257a40c653c64c666ce877d59d2b";
+const covers = [softechBg, rrdBg, libtechBg];
+const styles = {
+  backgroundImage: `url(${mainBg})`,
+  height: 550,
+  backgroundPosition: "bottom"
+};
 
 const Home = props => {
   const { categories: cards } = useContext(DataContext);
-  const [state, setState] = useState({});
-  const covers = [softechBg, rrdBg, libtechBg];
-  const cardsMapper = cards.map((card, i) => {
-    return <Card key={i} name={card.name} bg={covers[i]} />;
-  });
-
-  const getThumbnails = async () => {
-    try {
-      let res = await axios.get(
-        `${cors}https://www.instagram.com/${userGraph}${vars}`
-      );
-      let { edges } = res.data.data.user.edge_owner_to_timeline_media;
-      setState({ edges });
-    } catch (error) {
-      console.error(erro);
-    }
-  };
+  const [state, setState] = useState({ data: [], hasError: false });
+  const cardsMapper = cards.map((card, i) => (
+    <Card key={i} name={card.name} bg={covers[i]} />
+  ));
 
   useEffect(() => {
-    getThumbnails();
-  }, [state]);
+    const getThumbnails = async () => {
+      try {
+        let res = await axios.get(
+          `https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=${userGraph}&variables={"id":"233724914","first":6}`
+        );
+        let { edges } = res.data.data.user.edge_owner_to_timeline_media;
+        setState({ ...state, data: edges });
+      } catch (error) {
+        setState({ ...state, hasError: true });
+      }
+    };
+  }, []);
 
+  console.log(state);
   return (
     <React.Fragment>
       <div className="main--hero" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -80,14 +82,7 @@ const Home = props => {
             <div className="main--section-prods-grid">{cardsMapper}</div>
           </div>
         </div>
-        <div
-          className="main--section-cover"
-          style={{
-            backgroundImage: `url(${mainBg})`,
-            height: 550,
-            backgroundPosition: "bottom"
-          }}
-        >
+        <div className="main--section-cover" style={styles}>
           <div className="main--section-cover-over main--section-cover">
             <div className="main--section-cover-txt">
               <h1>NEW MARS PROD MAX</h1>
