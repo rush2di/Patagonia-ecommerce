@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import heroBg from "../assets/images/Hero-min.jpg";
+import mainBg from "../assets/images/Main.jpg";
 import { DataContext } from "../context/dataContext";
 import softechBg from "../assets/images/Softech-min.jpg";
 import rrdBg from "../assets/images/RRD-min.jpg";
@@ -58,7 +59,14 @@ const Home = props => {
             <div className="main--section-prods-grid">{cardsMapper}</div>
           </div>
         </div>
-        <div style={{ backgroundImage: `url(${heroBg})`, height: 550 }}>
+        <div
+          className="main--section-cover"
+          style={{
+            backgroundImage: `url(${mainBg})`,
+            height: 550,
+            backgroundPosition: "bottom"
+          }}
+        >
           <div className="main--section-cover-over main--section-cover">
             <div className="main--section-cover-txt">
               <h1>NEW MARS PROD MAX</h1>
@@ -69,6 +77,16 @@ const Home = props => {
               <span>fugiat nulla pariatur</span>
             </div>
           </div>
+        </div>
+        <div className="main--section-iframe">
+          <iframe
+            src="https://player.vimeo.com/video/332463815"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            height="520px"
+            allowFullScreen
+            title="video"
+          />
         </div>
       </div>
     </React.Fragment>

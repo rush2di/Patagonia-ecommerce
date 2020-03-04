@@ -206,16 +206,16 @@ html {
 .main {
   &--hero {
     height: 550px;
-    @include cover-poser();
+    @include cover-poser;
   }
   &--hero-over {
-    @include cover-overtop();
+    @include cover-overtop;
     font-family: $font-two;
   }
   &--hero-over-txt {
     display: flex;
     flex-direction: column;
-    @include cover-heading();
+    @include cover-heading;
     h1 {
       font-size: 3rem;
       font-weight: 900;
@@ -229,23 +229,23 @@ html {
       margin-bottom: 3rem;
     }
     button {
-      background: #5cce06;
+      background: #56c105;
       letter-spacing: 0.5px;
       margin-left: 0.5rem;
       font-weight: 600;
       font-size: 0.8rem;
-      color: #fff494;
+      color: #fff282;
       cursor: pointer;
       width: 150px;
       height: 50px;
       border: 0;
       &:hover {
-        background: #49af1a;
+        background: #3c9a11;
       }
     }
   }
   &--hero-over-comp {
-    @include cover-comptext();
+    @include cover-comptext;
   }
   &--section-intro {
     padding: 3rem 0;
@@ -325,21 +325,37 @@ html {
       &:hover {
         .card--over {
           backdrop-filter: blur(2px);
-          background: #10162bb0;
+          background: #050f25bf;
         }
       }
     }
   }
   &--section-cover {
+    @include cover-poser;
     font-family: $font-two;
     &-over {
       @include cover-overtop;
     }
     &-txt {
-      @include cover-heading;
+      @include cover-heading(2.5rem);
+      width: 20%;
+      h1 {
+        font-weight: 900;
+        font-size: 3.75rem;
+      }
     }
     &-comp {
       @include cover-comptext;
+    }
+  }
+  &--section-iframe {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    iframe {
+      width: inherit;
     }
   }
 }

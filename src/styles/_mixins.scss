@@ -14,14 +14,14 @@
   width: 100%;
   height: 100%;
   color: white;
-  background: linear-gradient(0deg, #0e5e96a6, transparent);
+  background: linear-gradient(0deg, #001a41f0, transparent);
   position: relative;
 }
 
-@mixin cover-heading() {
+@mixin cover-heading($val: 5rem) {
   position: absolute;
-  top: 5rem;
   left: 5rem;
+  top: $val;
 }
 
 @mixin cover-comptext() {
