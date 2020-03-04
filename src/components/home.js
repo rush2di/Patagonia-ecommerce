@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import heroBg from "../assets/images/Hero-min.jpg";
 import mainBg from "../assets/images/Main.jpg";
 import { DataContext } from "../context/dataContext";
@@ -6,14 +6,35 @@ import softechBg from "../assets/images/Softech-min.jpg";
 import rrdBg from "../assets/images/RRD-min.jpg";
 import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
+import axios from "axios";
+
+const userGraph = "graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b";
+const vars = '&variables={"id":"233724914","first":6}';
+const cors = "https://cors-anywhere.herokuapp.com/";
 
 const Home = props => {
   const { categories: cards } = useContext(DataContext);
+  const [state, setState] = useState({});
   const covers = [softechBg, rrdBg, libtechBg];
   const cardsMapper = cards.map((card, i) => {
-    const { id, name } = card;
-    return <Card key={`-${id}`} name={name} bg={covers[i]} />;
+    return <Card key={i} name={card.name} bg={covers[i]} />;
   });
+
+  const getThumbnails = async () => {
+    try {
+      let res = await axios.get(
+        `${cors}https://www.instagram.com/${userGraph}${vars}`
+      );
+      let { edges } = res.data.data.user.edge_owner_to_timeline_media;
+      setState({ edges });
+    } catch (error) {
+      console.error(erro);
+    }
+  };
+
+  useEffect(() => {
+    getThumbnails();
+  }, [state]);
 
   return (
     <React.Fragment>
@@ -91,11 +112,11 @@ const Home = props => {
       </div>
       <div className="main--section-instagram">
         <div className="container">
-          <h3>FOLLOW US ON INSTAGRAM</h3>
+          <h4>FOLLOW US ON INSTAGRAM</h4>
           <div className="instagram--grid">
-            <div className="instagram--img"></div>
-            <div className="instagram--img"></div>
-            <div className="instagram--img"></div>
+            {new Array(6).fill("").map(i => {
+              return <div className="instagram--img"></div>;
+            })}
           </div>
         </div>
       </div>
