@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import heroBg from "../assets/images/Hero-min.jpg";
+import { DataContext } from "../context/dataContext";
+import softechBg from "../assets/images/Softech-min.jpg";
+import rrdBg from "../assets/images/RRD-min.jpg";
+import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
 
 const Home = props => {
+  const { categories: cards } = useContext(DataContext);
+  const covers = [softechBg, rrdBg, libtechBg];
+  const cardsMapper = cards.map((card, i) => {
+    const { id, name } = card;
+    return <Card key={`-${id}`} name={name} bg={covers[i]} />;
+  });
+
   return (
     <React.Fragment>
       <div className="main--hero" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -40,8 +51,40 @@ const Home = props => {
           <button>OUR STORY</button>
         </div>
       </div>
+      <div className="main--section-prods">
+        <div className="main--section-prods-box">
+          <div className="container">
+            <h4>DISCOVER OUR SURFBOARDS</h4>
+            <div className="main--section-prods-grid">{cardsMapper}</div>
+          </div>
+        </div>
+        <div style={{ backgroundImage: `url(${heroBg})`, height: 550 }}>
+          <div className="main--section-cover-over main--section-cover">
+            <div className="main--section-cover-txt">
+              <h1>NEW MARS PROD MAX</h1>
+            </div>
+            <div className="main--section-cover-comp">
+              <span>Duis aute irure dolor in reprehenderit</span>
+              <span>in voluptate velit esse cillum dolore eu</span>
+              <span>fugiat nulla pariatur</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
 
 export default Home;
+
+const Card = ({ name, bg }) => {
+  return (
+    <React.Fragment>
+      <div className="card" style={{ backgroundImage: `url(${bg})` }}>
+        <div className="card--over">
+          <span>{name}</span>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};

@@ -2,7 +2,8 @@
   "categories": [
     {
       "id": "Softech-18x",
-      "name": "Softech",
+      "name": "SOFTECH",
+      "cover": "../assets/images/Softech-min.jpg",
       "products": [
         {
           "prodName": "HANDSHAPED SKY",
@@ -70,6 +71,7 @@
     {
       "id": "RRD-90x",
       "name": "RRD",
+      "cover": "../assets/images/RRD-min.jpg",
       "products": [
         {
           "prodName": "IAN ARMSTRONG LUCKY FISH V2",
@@ -133,6 +135,7 @@
     {
       "id": "LIB-TECH-05x",
       "name": "LIB TECH",
+      "cover": "../assets/images/LibTech-min.jpg",
       "products": [
         {
           "prodName": "LOST KA SWORDFISH",
