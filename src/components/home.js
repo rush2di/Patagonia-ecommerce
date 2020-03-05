@@ -17,16 +17,13 @@ const Home = props => {
     height: 550,
     backgroundPosition: "bottom"
   };
-  const cardsMapper = cards.map((card, i) => (
-    <Card key={i} name={card.name} bg={covers[i]} />
-  ));
 
   useEffect(() => {
+    const userGraph =
+      'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"233724914","first":6}';
     const getThumbnails = async () => {
       try {
-        let res = await axios.get(
-          'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"233724914","first":6}'
-        );
+        let res = await axios.get(userGraph);
         let { edges } = res.data.data.user.edge_owner_to_timeline_media;
         setState({ ...state, data: edges });
       } catch (error) {
@@ -37,6 +34,10 @@ const Home = props => {
       getThumbnails();
     }
   }, [state]);
+
+  const cardsMapper = cards.map((card, i) => {
+    return <Card key={i} name={card.name} bg={covers[i]} />;
+  });
 
   return (
     <React.Fragment>
@@ -99,6 +100,7 @@ const Home = props => {
             src="https://player.vimeo.com/video/332463815"
             frameBorder="0"
             allow="autoplay; encrypted-media"
+            secure="true"
             height="520px"
             allowFullScreen
             title="video"
@@ -108,11 +110,12 @@ const Home = props => {
       <div className="main--section-instagram">
         <div className="container">
           <h4>FOLLOW US ON INSTAGRAM</h4>
-          <div className="instagram--grid">
-            {new Array(6).fill("").map(i => {
-              return <div className="instagram--img"></div>;
-            })}
-          </div>
+          {!!state.data.length ? <Thumbnails data={state.data} /> : <Spinner />}
+          {state.hasError && (
+            <div className="spinner--box">
+              <p>An unexpected error occurred while fetching data</p>
+            </div>
+          )}
         </div>
       </div>
     </React.Fragment>
@@ -130,5 +133,25 @@ const Card = ({ name, bg }) => {
         </div>
       </div>
     </React.Fragment>
+  );
+};
+
+const Thumbnails = ({ data }) => {
+  const dataMapper = data.map(edge => {
+    const { id, thumbnail_src } = edge.node;
+    return (
+      <div key={id} className="instagram--img">
+        <img src={thumbnail_src} alt="thumbnail" />
+      </div>
+    );
+  });
+  return <div className="instagram--grid">{dataMapper}</div>;
+};
+
+const Spinner = () => {
+  return (
+    <div className="spinner--box">
+      <div className="spinner"></div>
+    </div>
   );
 };

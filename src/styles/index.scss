@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 @import "./variabls";
+@import "./spinners";
 @import "./mixins";
 
 * {
@@ -18,6 +19,18 @@ html {
 .main {
   min-height: calc(100vh - 120px);
   background: $bg-color;
+}
+.spinner {
+  @include spinner(2em, 6px double $txt-sec-color, border-width 5px);
+  &--box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 3rem;
+    margin: 5rem auto;
+    justify-content: center;
+    align-items: stretch;
+  }
 }
 
 /////// Navbar
@@ -384,6 +397,9 @@ html {
       height: 320px;
       width: 320px;
       background: gainsboro;
+      img {
+        width: inherit;
+      }
     }
   }
 }

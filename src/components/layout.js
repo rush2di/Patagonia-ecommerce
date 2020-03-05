@@ -38,7 +38,7 @@ const NavBar = () => {
       <nav className="nav">
         <div className="container">
           <div className="nav--Logo">
-            <img src={Logo} />
+            <img src={Logo} alt="Patagonia" />
           </div>
           <ul className="nav--items">
             <li>Surfboards</li>
@@ -46,10 +46,10 @@ const NavBar = () => {
           </ul>
           <div className="nav--icons">
             <button>
-              <img src={searchIcon} />
+              <img src={searchIcon} alt="" />
             </button>
             <button>
-              <img src={cartIcon} />
+              <img src={cartIcon} alt="" />
             </button>
           </div>
         </div>
@@ -79,7 +79,7 @@ const Footer = () => {
   const socialIconsMapper = socialIcons.map((icon, index) => {
     return (
       <li key={index + "icon"}>
-        <img src={icon} />
+        <img src={icon} alt="" />
       </li>
     );
   });
@@ -94,7 +94,7 @@ const Footer = () => {
               <button>Join</button>
             </form>
             <span>By submitting your email address you agree to the </span>
-            <a href="#">Terms & Conditions</a>
+            <a href="/#">Terms & Conditions</a>
           </div>
           <div className="footer--gridbox-sec">
             <ul>{footerItemsMapper}</ul>
