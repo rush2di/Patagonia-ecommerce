@@ -8,16 +8,15 @@ import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
 import axios from "axios";
 
-const covers = [softechBg, rrdBg, libtechBg];
-const styles = {
-  backgroundImage: `url(${mainBg})`,
-  height: 550,
-  backgroundPosition: "bottom"
-};
-
 const Home = props => {
   const { categories: cards } = useContext(DataContext);
   const [state, setState] = useState({ data: [], hasError: false });
+  const covers = [softechBg, rrdBg, libtechBg];
+  const styles = {
+    backgroundImage: `url(${mainBg})`,
+    height: 550,
+    backgroundPosition: "bottom"
+  };
   const cardsMapper = cards.map((card, i) => (
     <Card key={i} name={card.name} bg={covers[i]} />
   ));
@@ -39,7 +38,6 @@ const Home = props => {
     }
   }, [state]);
 
-  console.log(state);
   return (
     <React.Fragment>
       <div className="main--hero" style={{ backgroundImage: `url(${heroBg})` }}>
