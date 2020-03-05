@@ -8,7 +8,6 @@ import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
 import axios from "axios";
 
-const userGraph = "472f257a40c653c64c666ce877d59d2b";
 const covers = [softechBg, rrdBg, libtechBg];
 const styles = {
   backgroundImage: `url(${mainBg})`,
@@ -27,7 +26,7 @@ const Home = props => {
     const getThumbnails = async () => {
       try {
         let res = await axios.get(
-          `https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=${userGraph}&variables={"id":"233724914","first":6}`
+          'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"233724914","first":6}'
         );
         let { edges } = res.data.data.user.edge_owner_to_timeline_media;
         setState({ ...state, data: edges });
@@ -35,7 +34,10 @@ const Home = props => {
         setState({ ...state, hasError: true });
       }
     };
-  }, []);
+    if (!!state.data.length === false && state.hasError === false) {
+      getThumbnails();
+    }
+  }, [state]);
 
   console.log(state);
   return (
