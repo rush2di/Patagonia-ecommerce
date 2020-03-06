@@ -2,7 +2,44 @@ import React from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
-const Formy = ({ errors, touched, isSubmitting }) => {
+const Forms = ({ type }) => {
+  if (type === "sign-in") {
+    const mapPropsToValues = ({ email, password, remember }) => {
+      return {
+        email: email || "",
+        password: password || "",
+        remember: remember || false
+      };
+    };
+
+    const validationSchema = Yup.object().shape({
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Email is required"),
+      password: Yup.string().required("Password is required"),
+      remember: Yup.boolean()
+    });
+
+    const handleSubmit = (values, { resetForm, setSubmitting }) => {
+      setTimeout(() => {
+        resetForm();
+        setSubmitting(false);
+      }, 1500);
+    };
+
+    const FormikSignIn = withFormik({
+      mapPropsToValues,
+      validationSchema,
+      handleSubmit
+    })(SignIn);
+
+    return <FormikSignIn />;
+  } else {
+    return <div>shit</div>;
+  }
+};
+
+const SignIn = ({ errors, touched, isSubmitting }) => {
   return (
     <Form className="form">
       <label>EMAIL</label>
@@ -25,31 +62,4 @@ const Formy = ({ errors, touched, isSubmitting }) => {
   );
 };
 
-const mapPropsToValues = ({ email, password, remember }) => {
-  return {
-    email: email || "",
-    password: password || "",
-    remember: remember || false
-  };
-};
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  password: Yup.string().required("Password is required"),
-  remember: Yup.boolean()
-});
-
-const handleSubmit = (values, { resetForm, setSubmitting }) => {
-  setTimeout(() => {
-    resetForm();
-    setSubmitting(false);
-  }, 1500);
-};
-
-export default withFormik({
-  mapPropsToValues,
-  validationSchema,
-  handleSubmit
-})(Formy);
+export default Forms;

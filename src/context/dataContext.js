@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import Layout from "../components/layout";
+import Layout from "../pages/layout";
 import data from "./data.json";
 
 export const DataContext = createContext();

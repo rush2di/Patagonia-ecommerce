@@ -1,5 +1,5 @@
 import React from "react";
-import Formy from "./form";
+import Forms from "../components/form";
 
 const SignIn = () => {
   return (
@@ -12,7 +12,7 @@ const SignIn = () => {
             with us, and you can't remember the password you will need to reset
             it by simply selecting 'Forgot Your Password?' below.
           </p>
-          <Formy />
+          <Forms type={"sign-in"} />
         </div>
         <CreateAccount />
       </div>
