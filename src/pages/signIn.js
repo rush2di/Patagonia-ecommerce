@@ -1,5 +1,5 @@
 import React from "react";
-import Forms from "../components/form";
+import Forms from "../components/forms";
 
 const SignIn = () => {
   return (
@@ -14,7 +14,7 @@ const SignIn = () => {
           </p>
           <Forms type={"sign-in"} />
         </div>
-        <CreateAccount />
+        <CreateAccount showBtn={true} />
       </div>
     </div>
   );
@@ -22,7 +22,7 @@ const SignIn = () => {
 
 export default SignIn;
 
-export const CreateAccount = () => {
+export const CreateAccount = ({ showBtn }) => {
   return (
     <div className="signin-content-sec">
       <h3>CREATE AN ACCOUNT</h3>
@@ -36,7 +36,7 @@ export const CreateAccount = () => {
         <li>Archive purchases and order history</li>
         <li>Register purchased surfboards and warranties</li>
       </ul>
-      <button>CREATE ACCOUNT</button>
+      {!!showBtn && <button>CREATE ACCOUNT</button>}
     </div>
   );
 };
