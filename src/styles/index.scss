@@ -403,3 +403,106 @@ html {
     }
   }
 }
+
+/////// Main --Sign-In-Page
+.main {
+  &--signin-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50vw / 2));
+    grid-gap: 5rem;
+    align-items: baseline;
+    justify-content: center;
+    padding: 3.5rem 0 4rem;
+    font-family: $font-two;
+    h3,
+    label {
+      font-weight: 600;
+    }
+    p,
+    ul {
+      font-size: 0.9rem;
+      color: $txt-paragraph;
+      line-height: 1.75;
+    }
+    .signin-content {
+      &-ft {
+        button {
+          border: 0;
+          cursor: pointer;
+          background: #000000;
+          align-self: baseline;
+          color: white;
+          font-size: 0.95rem;
+          padding: 1rem 1.15rem;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          &:hover {
+            background: #1f1f1f;
+          }
+        }
+        input {
+          padding: 0.75rem 0.5rem;
+          background: transparent;
+          margin: 0.5rem 0 1.5rem;
+          border: 2px solid #4d4d4d;
+        }
+        a {
+          text-decoration: none;
+          color: $txt-sec-color;
+          font-weight: 500;
+          font-size: 0.85rem;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+        div p {
+          margin: -1.2rem 0 0.5rem;
+        }
+        p {
+          margin: 1rem 0 1.5rem;
+        }
+        label:last-of-type {
+          align-self: baseline;
+          margin: 1rem 0 0.5rem;
+          input {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+      &-sec {
+        button {
+          border: 0;
+          cursor: pointer;
+          background: #000000;
+          align-self: baseline;
+          color: white;
+          font-size: 0.95rem;
+          padding: 1rem 1.15rem;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          &:hover {
+            background: #1f1f1f;
+          }
+        }
+        ul {
+          margin-left: 1rem;
+          margin-bottom: 1rem;
+          list-style: circle;
+        }
+        p {
+          margin: 1rem 0 0;
+        }
+      }
+      &-ft,
+      &-sec {
+        display: block;
+        height: 100%;
+        margin: 0 1.5rem;
+      }
+    }
+  }
+}
