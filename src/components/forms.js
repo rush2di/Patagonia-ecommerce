@@ -133,6 +133,18 @@ const SignUp = ({ errors, touched, isSubmitting }) => {
       <div>
         {touched.repassword && errors.repassword && <p>{errors.repassword}</p>}
       </div>
+      <div className="main--signup-content-checkboxs">
+        <label>
+          <input type="checkbox" />
+          Sign me up to receive email offers and updates
+        </label>
+        <label>
+          <input type="checkbox" />I accept the Patagonia Terms & Conditions
+        </label>
+        <label>
+          <input type="checkbox" />I accept the Patagonia Terms Of Use
+        </label>
+      </div>
       <button disabled={isSubmitting} type="submit">
         Sign Up
       </button>

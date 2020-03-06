@@ -5,10 +5,12 @@ import Forms from "../components/forms";
 const SignUp = () => {
   return (
     <div className="container">
-      <div className="main--signin-wrapper">
-        <div className="signin-content">
+      <div className="main--signup-wrapper">
+        <div className="main--signup-content">
           <CreateAccount />
-          <p>Please note that all fields are required</p>
+          <p className="main--signup-content-note">
+            Please note that all fields are required
+          </p>
           <Forms type={"sign-up"} />
         </div>
       </div>

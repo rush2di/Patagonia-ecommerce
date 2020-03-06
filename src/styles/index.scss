@@ -507,3 +507,91 @@ html {
     }
   }
 }
+
+/////// Main --Sign-Up-Page
+.main {
+  &--signup-wrapper {
+    display: block;
+    width: 100%;
+    font-family: $font-two;
+    padding: 3.5rem 0 4rem;
+    .signin-content-sec {
+      display: block;
+      height: 100%;
+      margin: 0 6.25rem;
+      p {
+        margin: 1rem 0 0;
+      }
+    }
+    h3,
+    label {
+      font-weight: 600;
+    }
+    p,
+    ul {
+      font-size: 0.9rem;
+      color: $txt-paragraph;
+      line-height: 1.75;
+    }
+    ul {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      list-style: circle;
+    }
+  }
+  &--signup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    margin: 0 auto;
+    &-note {
+      align-self: baseline;
+      margin: 0 6.25rem 1rem;
+      color: $txt-sec-color !important;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      padding: 0 6.25rem;
+      flex-direction: column;
+      line-height: 1.75;
+      input {
+        padding: 0.75rem 0.5rem;
+        background: transparent;
+        margin: 0.5rem 0 1.5rem;
+        border: 2px solid #4d4d4d;
+      }
+      div p {
+        margin: -1.2rem 0 0.5rem;
+      }
+      button {
+        border: 0;
+        cursor: pointer;
+        margin-top: 1rem;
+        background: #000000;
+        align-self: baseline;
+        color: white;
+        font-size: 0.95rem;
+        padding: 1rem 1.15rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        &:hover {
+          background: #1f1f1f;
+        }
+      }
+    }
+    &-checkboxs {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+      input {
+        margin-right: 0.5rem !important;
+      }
+    }
+  }
+}
