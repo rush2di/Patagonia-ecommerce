@@ -110,7 +110,11 @@ const Home = props => {
       <div className="main--section-instagram">
         <div className="container">
           <h4>FOLLOW US ON INSTAGRAM</h4>
-          {!!state.data.length ? <Thumbnails data={state.data} /> : <Spinner />}
+          {!!state.data.length ? (
+            <Thumbnails data={state.data} />
+          ) : (
+            state.hasError || <Spinner />
+          )}
           {state.hasError && (
             <div className="spinner--box">
               <p>An unexpected error occurred while fetching data</p>
