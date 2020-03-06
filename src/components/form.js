@@ -25,10 +25,10 @@ const Formy = ({ errors, touched, isSubmitting }) => {
   );
 };
 
-const mapPropsToValues = ({ name, email, remember }) => {
+const mapPropsToValues = ({ email, password, remember }) => {
   return {
-    name: name || "",
     email: email || "",
+    password: password || "",
     remember: remember || false
   };
 };
