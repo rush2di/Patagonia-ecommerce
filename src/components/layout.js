@@ -7,6 +7,7 @@ import instagram from "../assets/icons/instagram.svg";
 import twitter from "../assets/icons/twitter.svg";
 import youtube from "../assets/icons/youtube.svg";
 import { DataContext } from "../context/dataContext";
+import { Link } from "react-router-dom";
 
 const Layout = props => {
   return (
@@ -32,13 +33,17 @@ const NavBar = () => {
         <div className="container">
           <span>FREE SHIPPING ON ALL ORDERS OVER $450.</span>
           <button>EN</button>
-          <button>SIGN IN</button>
+          <Link to="/sign-in">
+            <button>SIGN IN</button>
+          </Link>
         </div>
       </div>
       <nav className="nav">
         <div className="container">
           <div className="nav--Logo">
-            <img src={Logo} alt="Patagonia" />
+            <Link to="/">
+              <img src={Logo} alt="Patagonia" />
+            </Link>
           </div>
           <ul className="nav--items">
             <li>Surfboards</li>
