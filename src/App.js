@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const Home = React.lazy(() => import("./pages/home"));
 const SignIn = React.lazy(() => import("./pages/signIn"));
 const SignUp = React.lazy(() => import("./pages/signUp"));
+const Products = React.lazy(() => import("./pages/products"));
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               <Route exact path="/" component={Home} />
               <Route path="/sign-in" component={SignIn} />
               <Route path="/sign-up" component={SignUp} />
+              <Route path="/shop/surfbards" component={Products} />
             </Switch>
           </React.Suspense>
         </div>
