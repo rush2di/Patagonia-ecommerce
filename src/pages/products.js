@@ -12,14 +12,12 @@ import {
 const Products = () => {
   const { path } = useRouteMatch();
   const { categories } = useContext(DataContext);
+  const background = { backgroundImage: `url(${bg})` };
 
   return (
     <React.Fragment>
       <div className="products--hero">
-        <div
-          style={{ backgroundImage: `url(${bg})` }}
-          className="products--hero-bg"
-        >
+        <div style={background} className="products--hero-bg">
           <div className="products--hero-over">
             <span>SHOP/SURFBOARDS</span>
           </div>
@@ -37,21 +35,19 @@ const Products = () => {
   );
 };
 
-export default Products;
-
 const ProductsList = ({ categories, filtred }) => {
   const { slugId } = useParams();
+
   const listMapper = categories.map(category => {
     const { id, name, products } = category;
-    const sublistMapper = products.map(product => (
-      <span key={`st${product.refrence}`}>{product.prodName}</span>
+    const sublistLogic = id === slugId && sublistMapper;
+    const sublistMapper = products.map(item => (
+      <span key={`st${item.refrence}`}>{item.prodName}</span>
     ));
     return (
       <li key={`listc${id}`}>
         <Link to={`/shop/surfbards/${id}`}>{name}</Link>
-        {id === slugId && (
-          <div className="products--main-sublist">{sublistMapper}</div>
-        )}
+        <div className="products--main-sublist">{sublistLogic}</div>
       </li>
     );
   });
@@ -59,7 +55,6 @@ const ProductsList = ({ categories, filtred }) => {
   const renderLogic = !!filtred
     ? categories.filter(item => item.id === slugId)
     : categories;
-
   const productsMapper = renderLogic.map(category => {
     const { id, name, products } = category;
     const productsDetails = products.map(product => (
@@ -100,3 +95,5 @@ const ProductsList = ({ categories, filtred }) => {
     </div>
   );
 };
+
+export default Products;
