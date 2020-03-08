@@ -59,7 +59,8 @@ const ProductsList = ({ categories, filtred }) => {
   const renderLogic = !!filtred
     ? categories.filter(item => item.id === slugId)
     : categories;
-  const render = renderLogic.map(category => {
+
+  const productsMapper = renderLogic.map(category => {
     const { id, name, products } = category;
     const productsDetails = products.map(product => (
       <div key={product.refrence} className="products--item">
@@ -95,7 +96,7 @@ const ProductsList = ({ categories, filtred }) => {
           surfers.
         </p>
       </div>
-      <div className="products--main-store">{render}</div>
+      <div className="products--main-store">{productsMapper}</div>
     </div>
   );
 };
