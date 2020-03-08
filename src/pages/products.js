@@ -37,11 +37,10 @@ const Products = () => {
 
 const ProductsList = ({ categories, filtred }) => {
   const { slugId } = useParams();
-
   const listMapper = categories.map(category => {
     const { id, name, products } = category;
-    const sublistLogic = id === slugId && sublistMapper;
-    const sublistMapper = products.map(item => (
+    let sublistLogic = id === slugId && sublistMapper;
+    let sublistMapper = products.map(item => (
       <span key={`st${item.refrence}`}>{item.prodName}</span>
     ));
     return (
@@ -51,13 +50,12 @@ const ProductsList = ({ categories, filtred }) => {
       </li>
     );
   });
-
   const renderLogic = !!filtred
     ? categories.filter(item => item.id === slugId)
     : categories;
   const productsMapper = renderLogic.map(category => {
     const { id, name, products } = category;
-    const productsDetails = products.map(product => (
+    let productsDetails = products.map(product => (
       <div key={product.refrence} className="products--item">
         <img src={product.image} alt="" />
         <div className="products-item-flex">
