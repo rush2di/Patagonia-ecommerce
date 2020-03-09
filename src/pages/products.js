@@ -73,7 +73,7 @@ const ProductsList = ({ categories, filtred }) => {
   });
 
   return (
-    <div className="products--main">
+    <div className="products--main container">
       <div className="products--main-aside">
         <h3>SHORTCUTS</h3>
         <ul>

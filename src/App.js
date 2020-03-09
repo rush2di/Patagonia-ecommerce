@@ -15,8 +15,8 @@ const App = () => {
         <div className="main">
           <React.Suspense
             fallback={
-              <div>
-                <span>Loading</span>
+              <div className="spinner-wrapper">
+                <div className="spinner" />
               </div>
             }
           >

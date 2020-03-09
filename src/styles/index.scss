@@ -20,6 +20,16 @@ html {
   min-height: calc(100vh - 120px);
   background: $bg-color;
 }
+
+.spinner-wrapper {
+  height: calc(100vh - 120px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .spinner {
   @include spinner(2em, 6px double $txt-sec-color, border-width 5px);
   &--box {
@@ -621,10 +631,26 @@ html {
   .products--main {
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
     &-aside {
+      font-family: $font-two;
       width: 320px;
-      padding: 1rem;
+      padding: 1rem 0;
+      ul {
+        padding: 1rem;
+        list-style: none;
+      }
+      li {
+        margin: 0.5rem 0;
+      }
+      a {
+        text-decoration: none;
+        color: $txt-prim-color;
+        font-weight: 600;
+      }
+      p {
+        line-height: 1.5;
+        color: $txt-paragraph;
+      }
     }
     &-store {
       padding: 0 1rem;
@@ -634,12 +660,17 @@ html {
   .products {
     &--card-wrapper {
       padding: 1rem 0;
+      h3 {
+        margin-bottom: 0.5rem;
+      }
     }
     &--grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       justify-content: center;
+      padding: 1rem 0;
+      grid-gap: 1rem;
     }
     &--item {
       display: flex;
@@ -649,8 +680,9 @@ html {
       img {
         width: 300px;
         height: 250px;
-        object-fit: contain;
+        object-fit: fill;
         object-position: center;
+        border-radius: 0.5rem;
       }
       &-flex {
         display: flex;
