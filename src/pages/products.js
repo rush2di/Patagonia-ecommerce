@@ -39,10 +39,10 @@ const ProductsList = ({ categories, filtred }) => {
   const { slugId } = useParams();
   const listMapper = categories.map(category => {
     const { id, name, products } = category;
-    let sublistLogic = id === slugId && sublistMapper;
     let sublistMapper = products.map(item => (
       <span key={`st${item.refrence}`}>{item.prodName}</span>
     ));
+    let sublistLogic = id === slugId && sublistMapper;
     return (
       <li key={`listc${id}`}>
         <Link to={`/shop/surfbards/${id}`}>{name}</Link>
@@ -58,7 +58,7 @@ const ProductsList = ({ categories, filtred }) => {
     let productsDetails = products.map(product => (
       <div key={product.refrence} className="products--item">
         <img src={product.image} alt="" />
-        <div className="products-item-flex">
+        <div className="products--item-flex">
           <span>{product.prodName}</span>
           <span>{product.price}</span>
         </div>
@@ -74,7 +74,7 @@ const ProductsList = ({ categories, filtred }) => {
 
   return (
     <div className="products--main">
-      <div className="products-main-aside">
+      <div className="products--main-aside">
         <h3>SHORTCUTS</h3>
         <ul>
           <li>

@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import Layout from "../components/layout";
-import data from "./data.json";
+import { data } from "./data";
 
 export const DataContext = createContext();
 
