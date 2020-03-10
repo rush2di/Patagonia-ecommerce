@@ -676,13 +676,19 @@ html {
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      margin-left: 0.5rem;
-      span {
+      margin-left: 1rem;
+      a {
         margin: 0.5rem 0;
         font-size: 0.8rem;
         text-decoration: underline;
         text-decoration-color: #bdbdbd;
         color: #1f1f1f;
+        font-weight: normal;
+        &:hover,
+        &:focus {
+          text-decoration-color: #1277c2;
+          color: #1277c2;
+        }
       }
     }
     h3 {
@@ -704,6 +710,13 @@ html {
       justify-content: center;
       padding: 1rem 0;
       grid-gap: 1.5rem;
+      a {
+        text-decoration: none;
+        transition: 0.2s all ease-out;
+      }
+      a:hover {
+        transform: scale(1.05);
+      }
     }
     &--item {
       display: flex;

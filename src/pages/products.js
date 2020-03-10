@@ -43,14 +43,22 @@ const ProductsList = ({ categories, filtred }) => {
     : categories;
   const productsMapper = renderLogic.map(category => {
     const { id, name, products } = category;
-    let productsDetails = products.map(product => (
-      <div key={product.refrence} className="products--item">
-        <img src={product.image} alt="" />
-        <div className="products--item-flex">
-          <span>{product.prodName}</span>
-          <span>{product.price}</span>
+    let productsDetails = products.map(item => (
+      <Link
+        to={{
+          pathname: `/shop/surfboard/${item.refrence}`,
+          state: item
+        }}
+        key={item.refrence}
+      >
+        <div className="products--item">
+          <img src={item.image} alt="" />
+          <div className="products--item-flex">
+            <span>{item.prodName}</span>
+            <span>{item.price}</span>
+          </div>
         </div>
-      </div>
+      </Link>
     ));
     return (
       <div key={`listp${id}`} className="products--card-wrapper">
@@ -76,14 +84,24 @@ const AsideBox = ({ categories }) => {
 
     let sublistMapper = products.map((item, i) => {
       let { refrence, prodName } = item;
-      return <span key={`${refrence}${i}`}>{prodName}</span>;
+      return (
+        <Link
+          to={{
+            pathname: `/shop/surfboard/${refrence}`,
+            state: item
+          }}
+          key={`${refrence}${i}`}
+        >
+          <span>{prodName}</span>
+        </Link>
+      );
     });
 
     let sublistLogic = id === slugId && sublistMapper;
 
     return (
       <li key={`listc${id}`}>
-        <Link to={`/shop/surfbards/${id}`}>{name}</Link>
+        <Link to={`/shop/surfboards/${id}`}>{name}</Link>
         <div className="products--main-sublist">{sublistLogic}</div>
       </li>
     );
@@ -94,7 +112,7 @@ const AsideBox = ({ categories }) => {
       <h3>SHORTCUTS</h3>
       <ul>
         <li>
-          <Link to="/shop/surfbards/">ALL</Link>
+          <Link to="/shop/surfboards/">ALL</Link>
         </li>
         {listMapper}
       </ul>
