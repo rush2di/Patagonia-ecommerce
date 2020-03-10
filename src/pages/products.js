@@ -37,19 +37,7 @@ const Products = () => {
 
 const ProductsList = ({ categories, filtred }) => {
   const { slugId } = useParams();
-  const listMapper = categories.map(category => {
-    const { id, name, products } = category;
-    let sublistMapper = products.map(item => (
-      <span key={`st${item.refrence}`}>{item.prodName}</span>
-    ));
-    let sublistLogic = id === slugId && sublistMapper;
-    return (
-      <li key={`listc${id}`}>
-        <Link to={`/shop/surfbards/${id}`}>{name}</Link>
-        <div className="products--main-sublist">{sublistLogic}</div>
-      </li>
-    );
-  });
+
   const renderLogic = !!filtred
     ? categories.filter(item => item.id === slugId)
     : categories;
@@ -74,22 +62,48 @@ const ProductsList = ({ categories, filtred }) => {
 
   return (
     <div className="products--main container">
-      <div className="products--main-aside">
-        <h3>SHORTCUTS</h3>
-        <ul>
-          <li>
-            <Link to="/shop/surfbards/">ALL</Link>
-          </li>
-          {listMapper}
-        </ul>
-        <p>
-          Surfboards manufactured and sold by Patagonia are guaranteed for
-          quality and performance. We stand by our surfboards and aim to produce
-          the highest quality products. Our surfboards are made for surfers, by
-          surfers.
-        </p>
-      </div>
+      <AsideBox categories={categories} />
       <div className="products--main-store">{productsMapper}</div>
+    </div>
+  );
+};
+
+const AsideBox = ({ categories }) => {
+  const { slugId } = useParams();
+
+  const listMapper = categories.map(category => {
+    let { id, name, products } = category;
+
+    let sublistMapper = products.map((item, i) => {
+      let { refrence, prodName } = item;
+      return <span key={`${refrence}${i}`}>{prodName}</span>;
+    });
+
+    let sublistLogic = id === slugId && sublistMapper;
+
+    return (
+      <li key={`listc${id}`}>
+        <Link to={`/shop/surfbards/${id}`}>{name}</Link>
+        <div className="products--main-sublist">{sublistLogic}</div>
+      </li>
+    );
+  });
+
+  return (
+    <div className="products--main-aside">
+      <h3>SHORTCUTS</h3>
+      <ul>
+        <li>
+          <Link to="/shop/surfbards/">ALL</Link>
+        </li>
+        {listMapper}
+      </ul>
+      <p>
+        Surfboards manufactured and sold by Patagonia are guaranteed for quality
+        and performance. We stand by our surfboards and aim to produce the
+        highest quality products. Our surfboards are made for surfers, by
+        surfers.
+      </p>
     </div>
   );
 };
