@@ -101,7 +101,9 @@ const Home = props => {
             frameBorder="0"
             allow="autoplay; encrypted-media"
             secure="true"
-            height="520px"
+            height="300"
+            width="560"
+            gesture="media"
             allowFullScreen
             title="video"
           />
