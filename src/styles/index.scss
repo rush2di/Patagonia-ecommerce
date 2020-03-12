@@ -792,7 +792,7 @@ html {
     }
     .carousel {
       * {
-        background: white;
+        background: white !important;
       }
       .control-prev.control-arrow:before {
         border-right: 8px solid #151515 !important;
@@ -806,9 +806,6 @@ html {
         object-position: center;
         margin: 0 0 2.2rem;
         background: white;
-        &-wrapper {
-          background: white;
-        }
       }
       .control {
         &-dots .dot {

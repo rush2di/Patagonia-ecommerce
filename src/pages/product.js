@@ -24,10 +24,7 @@ const Product = props => {
           emulateTouch={true}
           autoPlay={true}
         >
-          <div className="carousel--image-wrapper">
-            <img className="carousel--image" src={data.image} alt="" />
-          </div>
-          {!!data.album.length && albumMapper}
+          {albumMapper}
         </Carousel>
       </div>
     </div>
