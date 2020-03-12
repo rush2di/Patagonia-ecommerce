@@ -785,16 +785,36 @@ html {
 /////// Main --Product-Page
 .main {
   &--product {
-    .carousel {
-      &--image {
-        height: 300px;
-        object-fit: scale-down;
-        object-position: center;
-        background: #e2e2e2;
-      }
+    &-header {
+      background: white;
+      display: block;
+      width: 100%;
     }
-    .thumb img {
-      height: 70px;
+    .carousel {
+      * {
+        background: white;
+      }
+      .control-prev.control-arrow:before {
+        border-right: 8px solid #151515 !important;
+      }
+      .control-next.control-arrow:before {
+        border-left: 8px solid #151515 !important;
+      }
+      &--image {
+        height: 350px;
+        object-fit: contain;
+        object-position: center;
+        margin: 0 0 2.2rem;
+        background: white;
+        &-wrapper {
+          background: white;
+        }
+      }
+      .control {
+        &-dots .dot {
+          background: #444444 !important;
+        }
+      }
     }
   }
 }
