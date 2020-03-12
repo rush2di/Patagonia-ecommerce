@@ -6,22 +6,6 @@ export const data = {
       cover: require("../assets/images/Softech-min.jpg"),
       products: [
         {
-          prodName: "HANDSHAPED SKY",
-          price: "265,00 €",
-          refrence: "softech_hfbvf-blu-070",
-          image: require("../assets/Softech/ST1.jpg"),
-          album: [],
-          video: "https://www.youtube.com/watch?v=m5H8F9eyvVM"
-        },
-        {
-          prodName: "BOMBER WHITE/BLUE",
-          price: "280,00 €",
-          refrence: "softech_bomber_white",
-          image: require("../assets/Softech/ST2.jpg"),
-          album: [],
-          video: "https://www.youtube.com/watch?v=VqZAz0hnl3k"
-        },
-        {
           prodName: "MYSTERY BOX",
           price: "310,00 €",
           refrence: "softech_myst_5.2",
