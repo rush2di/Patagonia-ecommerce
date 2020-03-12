@@ -1,7 +1,8 @@
 import React from "react";
 
 const Product = props => {
-  console.log(props);
+  const data = !!props.location.state && props.location.state;
+  console.log(data);
   return <div></div>;
 };
 
