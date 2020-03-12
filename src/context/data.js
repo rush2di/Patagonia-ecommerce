@@ -11,6 +11,7 @@ export const data = {
           refrence: "softech_myst_5.2",
           image: require("../assets/Softech/ST3.jpg"),
           album: [
+            require("../assets/Softech/ST3.jpg"),
             require("../assets/Softech/ST3-BG1.jpg"),
             require("../assets/Softech/ST3-BG2.jpg")
           ],
@@ -22,6 +23,7 @@ export const data = {
           refrence: "softech_tc",
           image: require("../assets/Softech/ST4.jpg"),
           album: [
+            require("../assets/Softech/ST4.jpg"),
             require("../assets/Softech/ST4-BG1.jpg"),
             require("../assets/Softech/ST4-BG2.jpg")
           ],
@@ -33,6 +35,7 @@ export const data = {
           refrence: "softech_mhtii_lme/ylw",
           image: require("../assets/Softech/ST5.jpg"),
           album: [
+            require("../assets/Softech/ST5.jpg"),
             require("../assets/Softech/ST5-BG1.jpg"),
             require("../assets/Softech/ST5-BG2.jpg")
           ],
@@ -44,6 +47,7 @@ export const data = {
           refrence: "softech_rockfish_",
           image: require("../assets/Softech/ST6.jpg"),
           album: [
+            require("../assets/Softech/ST6.jpg"),
             require("../assets/Softech/ST6-BG1.jpg"),
             require("../assets/Softech/ST6-BG2.jpg"),
             require("../assets/Softech/ST6-BG3.jpg")
@@ -62,7 +66,7 @@ export const data = {
           price: "729,00 €",
           refrence: "24LKFA56",
           image: require("../assets/RRD/RRD1.jpg"),
-          album: [],
+          album: [require("../assets/RRD/RRD1.jpg")],
           video: "https://vimeo.com/287464648"
         },
         {
@@ -71,6 +75,7 @@ export const data = {
           refrence: "24HHA57",
           image: require("../assets/RRD/RRD2.jpg"),
           album: [
+            require("../assets/RRD/RRD2.jpg"),
             require("../assets/RRD/RRD2-BG1.jpg"),
             require("../assets/RRD/RRD2-BG2.jpg")
           ],
@@ -82,6 +87,7 @@ export const data = {
           refrence: "21KI56",
           image: require("../assets/RRD/RRD3.jpg"),
           album: [
+            require("../assets/RRD/RRD3.jpg"),
             require("../assets/RRD/RRD3-BG1.jpg"),
             require("../assets/RRD/RRD3-BG2.jpg"),
             require("../assets/RRD/RRD3-BG3.jpg"),
@@ -95,6 +101,7 @@ export const data = {
           refrence: "14STR58",
           image: require("../assets/RRD/RRD4.jpg"),
           album: [
+            require("../assets/RRD/RRD4.jpg"),
             require("../assets/RRD/RRD4-BG1.jpg"),
             require("../assets/RRD/RRD4-BG2.jpg"),
             require("../assets/RRD/RRD4-BG3.jpg")
@@ -106,7 +113,7 @@ export const data = {
           price: "729,00 €",
           refrence: "24YTA60",
           image: require("../assets/RRD/RRD5.jpg"),
-          album: [],
+          album: [require("../assets/RRD/RRD5.jpg")],
           video: "https://vimeo.com/287464727"
         },
         {
@@ -114,7 +121,7 @@ export const data = {
           price: "1 139,00 €",
           refrence: "24MAA90",
           image: require("../assets/RRD/RRD6.jpg"),
-          album: [],
+          album: [require("../assets/RRD/RRD6.jpg")],
           video: "https://vimeo.com/287464673"
         }
       ]
@@ -130,6 +137,7 @@ export const data = {
           refrence: "20SU002",
           image: require("../assets/Libtech/LT1.jpg"),
           album: [
+            require("../assets/Libtech/LT1.jpg"),
             require("../assets/Libtech/LT1-BG1.jpg"),
             require("../assets/Libtech/LT1-BG2.jpg")
           ],
@@ -140,7 +148,10 @@ export const data = {
           price: "759,99 €",
           refrence: "19SU015",
           image: require("../assets/Libtech/LT2.jpg"),
-          album: [require("../assets/Libtech/LT2-BG1.jpg")],
+          album: [
+            require("../assets/Libtech/LT2.jpg"),
+            require("../assets/Libtech/LT2-BG1.jpg")
+          ],
           video: "https://vimeo.com/277560970"
         },
         {
@@ -149,6 +160,7 @@ export const data = {
           refrence: "19SU001",
           image: require("../assets/Libtech/LT3.jpg"),
           album: [
+            require("../assets/Libtech/LT3.jpg"),
             require("../assets/Libtech/LT3-BG1.jpg"),
             require("../assets/Libtech/LT3-BG2.jpg"),
             require("../assets/Libtech/LT3-BG3.jpg"),
