@@ -785,11 +785,16 @@ html {
 /////// Main --Product-Page
 .main {
   &--product {
-    .carousel--image {
-      height: 300px;
-      object-fit: scale-down;
-      object-position: center;
-      background: #e2e2e2;
+    .carousel {
+      &--image {
+        height: 300px;
+        object-fit: scale-down;
+        object-position: center;
+        background: #e2e2e2;
+      }
+    }
+    .thumb img {
+      height: 70px;
     }
   }
 }
