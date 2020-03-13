@@ -235,47 +235,8 @@ html {
     height: 550px;
     @include cover-poser;
   }
-  &--hero-over {
-    @include cover-overtop;
-    font-family: $font-two;
-  }
-  &--hero-over-txt {
-    display: flex;
-    flex-direction: column;
-    @include cover-heading;
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.25;
-    }
-    p {
-      letter-spacing: 0.1rem;
-      font-weight: 300;
-      font-size: 0.95rem;
-      margin-left: 0.5rem;
-      margin-bottom: 3rem;
-    }
-    button {
-      background: #56c105;
-      letter-spacing: 0.5px;
-      margin-left: 0.5rem;
-      font-weight: 600;
-      font-size: 0.8rem;
-      color: #fff282;
-      cursor: pointer;
-      width: 150px;
-      height: 50px;
-      border: 0;
-      &:hover {
-        background: #3c9a11;
-      }
-    }
-  }
-  &--hero-over-comp {
-    @include cover-comptext;
-  }
   &--section-intro {
-    padding: 4rem 0;
+    padding: 4rem 0 3.5rem;
     &-box {
       display: flex;
       flex-direction: column;
@@ -312,8 +273,6 @@ html {
     }
   }
   &--section-prods {
-    background: #000;
-    padding: 2rem 0 0;
     height: 100%;
     width: 100%;
     &-box {
@@ -326,9 +285,9 @@ html {
       }
     }
     &-grid {
-      margin: 2rem 1rem 3rem;
+      margin: 0 auto 3.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 320px);
+      grid-template-columns: repeat(3, 383px);
       align-items: center;
       justify-content: center;
       grid-gap: 1.5rem;
@@ -346,7 +305,7 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #000000ce;
+        background: #000000d9;
         transition: all 0.2s ease-out;
         span {
           font-family: $font-two;
@@ -357,8 +316,7 @@ html {
       }
       &:hover {
         .card--over {
-          backdrop-filter: blur(2px);
-          background: #050f25bf;
+          background: #00000087;
         }
       }
     }
@@ -623,13 +581,13 @@ html {
 .main {
   .products--hero {
     &-bg {
-      background-position: 0% 80%;
+      background-position: 0% 77%;
       background-size: cover;
       height: 400px;
       width: 100%;
     }
     &-over {
-      background: linear-gradient(0deg, black, transparent);
+      background: linear-gradient(0deg, #000000bd, transparent);
       height: inherit;
       width: inherit;
       position: relative;

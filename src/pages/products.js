@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../context/dataContext";
-import bg from "../assets/images/Main.jpg";
+import bg from "../assets/images/image3.webp";
 import {
   Switch,
   Route,

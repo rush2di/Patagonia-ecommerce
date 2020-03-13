@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import heroBg from "../assets/images/Hero-min.jpg";
-import mainBg from "../assets/images/Main.jpg";
+import heroBg from "../assets/images/image4.webp";
+import mainBg from "../assets/images/image5.webp";
 import { DataContext } from "../context/dataContext";
 import softechBg from "../assets/images/Softech-min.jpg";
 import rrdBg from "../assets/images/RRD-min.jpg";
@@ -14,7 +14,7 @@ const Home = props => {
   const covers = [softechBg, rrdBg, libtechBg];
   const styles = {
     backgroundImage: `url(${mainBg})`,
-    height: 550,
+    height: 395,
     backgroundPosition: "bottom"
   };
 
@@ -41,25 +41,10 @@ const Home = props => {
 
   return (
     <React.Fragment>
-      <div className="main--hero" style={{ backgroundImage: `url(${heroBg})` }}>
-        <div className="main--hero-over">
-          <div className="container">
-            <div className="main--hero-over-txt">
-              <h1>
-                WE HAVE
-                <br />
-                THE WORKS
-              </h1>
-              <p>ITS ALL FUN AND GAMES UNTIL YOU CATCH TOO MUCH AIR</p>
-              <button>MASON TWIN LIME</button>
-            </div>
-            <div className="main--hero-over-comp">
-              <span>TAKE A DEEPER LOOK AT THE</span>
-              <span>SOFTECH SURFBOARDS</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div
+        className="main--hero"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      ></div>
       <div className="main--section-intro">
         <div className="main--section-intro-box">
           <div>
@@ -79,25 +64,13 @@ const Home = props => {
       <div className="main--section-prods">
         <div className="main--section-prods-box">
           <div className="container">
-            <h4>DISCOVER OUR SURFBOARDS</h4>
             <div className="main--section-prods-grid">{cardsMapper}</div>
           </div>
         </div>
-        <div className="main--section-cover" style={styles}>
-          <div className="main--section-cover-over main--section-cover">
-            <div className="main--section-cover-txt">
-              <h1>NEW MARS PROD MAX</h1>
-            </div>
-            <div className="main--section-cover-comp">
-              <span>Duis aute irure dolor in reprehenderit</span>
-              <span>in voluptate velit esse cillum dolore eu</span>
-              <span>fugiat nulla pariatur</span>
-            </div>
-          </div>
-        </div>
+        <div className="main--section-cover" style={styles}></div>
         <div className="main--section-iframe">
           <iframe
-            src="https://player.vimeo.com/video/332463815"
+            src="https://www.youtube.com/embed/XqeP2fYyw4g"
             frameBorder="0"
             allow="autoplay; encrypted-media"
             secure="true"
