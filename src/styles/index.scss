@@ -17,7 +17,7 @@ html {
   margin: 0 auto;
 }
 .main {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 87px);
   background: $bg-color;
 }
 
@@ -570,9 +570,9 @@ html {
   .products--hero {
     padding: 1.5rem 0 0;
     &-bg {
-      background-position: 0% 77%;
+      background-position: 0% 72%;
       background-size: cover;
-      height: 400px;
+      height: 350px;
       width: 100%;
     }
     &-over {
@@ -597,8 +597,8 @@ html {
     &-aside {
       font-family: $font-two;
       min-height: 100vh;
-      width: 250px;
-      padding: 1rem 1.5rem 0 0;
+      width: 307px;
+      padding: 1rem 0.5rem;
       ul {
         padding: 1rem 0;
         list-style: none;
@@ -608,7 +608,7 @@ html {
         margin: 0.5rem 0;
         &:nth-child(n + 2):before {
           content: "+";
-          display: inline-flexbox;
+          display: inline-flex;
           color: $txt-paragraph;
           margin-right: 0.5rem;
         }
@@ -684,7 +684,6 @@ html {
       background: white;
       padding: 1rem 1rem 0;
       overflow: hidden;
-      border-radius: 1.25rem;
       box-shadow: 0px 5px 15px #0000005c;
       img {
         width: 200px;
@@ -749,7 +748,7 @@ html {
         border-left: 8px solid #151515 !important;
       }
       &--image {
-        height: 350px;
+        height: 315px;
         object-fit: contain;
         object-position: center;
         margin: 0 0 2.2rem;
@@ -758,6 +757,149 @@ html {
       .control {
         &-dots .dot {
           background: #444444 !important;
+        }
+      }
+    }
+    &-cart {
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &-desc {
+      margin: auto;
+      width: 75%;
+      color: $txt-paragraph;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      font-family: $font-two;
+    }
+    &-details {
+      font-family: $font-two;
+      .extra-info {
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .details-flex {
+        margin: 4rem 0 2rem;
+        background: #242424;
+        color: #f9f9f9;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: space-around;
+        &-btn {
+          width: 60%;
+          display: flex;
+          margin: 0 auto;
+          align-items: baseline;
+          button {
+            color: white;
+            background: transparent;
+            border: 2px solid darkgray;
+            padding: 1rem 2rem;
+            margin: 0 auto;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+        &-txt {
+          padding-top: 0.5rem;
+          line-height: 1.9;
+          width: 100%;
+          p {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+          }
+        }
+        &-table {
+          margin-bottom: 2rem;
+          .table-data {
+            &--row {
+              width: 100%;
+              height: 100%;
+            }
+            &--main {
+              width: 50%;
+              font-weight: 600;
+              font-size: 0.9rem;
+            }
+            &--specs {
+              font-weight: 400;
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .product {
+    &-info {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-two;
+      align-items: flex-start;
+      span {
+        margin: 0 0 0.5rem;
+        font-size: 0.95rem;
+        color: #242424;
+        font-weight: 500;
+        &::before {
+          content: "Name: ";
+          font-weight: 700;
+          margin-right: 0.55rem;
+          color: $txt-prim-color;
+        }
+        &:last-of-type {
+          font-weight: 700;
+          &::before {
+            content: "Price: ";
+            font-weight: 700;
+            margin-right: 1rem;
+            color: $txt-prim-color;
+          }
+        }
+      }
+    }
+    &-btns {
+      &-select {
+        padding: 0.7rem 0.75rem;
+      }
+      .button-md {
+        padding: 0.75rem 0.85rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        border: 0;
+        color: white;
+      }
+      .cart-btn {
+        background: #61c323;
+        &:hover {
+          background: #6fd82d;
+        }
+      }
+      .wish-btn {
+        background: #151515;
+        &:hover {
+          background: #242424;
+        }
+      }
+      .extra-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: $font-two;
+        margin-top: 0.5rem;
+        line-height: 1.65;
+        font-size: 0.8rem;
+        span {
+          color: $txt-paragraph;
+          &:last-of-type {
+            color: #3f9409;
+            font-weight: 500;
+          }
         }
       }
     }
