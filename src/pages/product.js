@@ -14,7 +14,7 @@ const Product = props => {
   console.log(data);
   return (
     <div className="main--product">
-      <div className="main--products-header">
+      <div className="main--product-header">
         <Carousel
           className="container"
           centerMode={true}

@@ -16,7 +16,7 @@ const Products = () => {
 
   return (
     <React.Fragment>
-      <div className="products--hero">
+      <div className="products--hero container">
         <div style={background} className="products--hero-bg">
           <div className="products--hero-over">
             <span>SHOP/SURFBOARDS</span>
