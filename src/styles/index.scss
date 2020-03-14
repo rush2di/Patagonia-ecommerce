@@ -777,8 +777,9 @@ html {
     &-details {
       font-family: $font-two;
       .extra-info {
-        font-size: 0.95rem;
+        font-size: 0.9rem !important;
         font-weight: 600;
+        margin: 0 !important;
       }
       .details-flex {
         margin: 4rem 0 2rem;
@@ -824,7 +825,7 @@ html {
             &--main {
               width: 50%;
               font-weight: 600;
-              font-size: 0.9rem;
+              font-size: 0.85rem;
             }
             &--specs {
               font-weight: 400;
