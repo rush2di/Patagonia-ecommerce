@@ -61,14 +61,14 @@ html {
     button {
       border: none;
       cursor: pointer;
-      padding: 0.75rem;
+      padding: 0.5rem;
       background: transparent;
       color: $txt-white;
       margin-left: 0.5rem;
       &:last-of-type {
-        background: #505050;
+        background: #333;
         &:hover {
-          background: #626262;
+          background: #444444;
         }
       }
     }
@@ -76,14 +76,14 @@ html {
 
   .nav {
     width: 100%;
-    height: 4rem;
+    height: 3.5rem;
     background: white;
     .container {
       height: 100%;
       @include nav-flex(space-between);
     }
     &--Logo {
-      width: 140px;
+      width: 135px;
       display: inline-block;
       cursor: pointer;
       &:hover {
@@ -91,9 +91,10 @@ html {
       }
     }
     &--items {
+      text-transform: uppercase;
       font-family: $font-two;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       list-style: none;
       display: flex;
       li {
@@ -236,7 +237,7 @@ html {
     @include cover-poser;
   }
   &--section-intro {
-    padding: 4rem 0 3.5rem;
+    padding: 4rem 0 4.5rem;
     &-box {
       display: flex;
       flex-direction: column;
@@ -285,9 +286,9 @@ html {
       }
     }
     &-grid {
-      margin: 0 auto 3.5rem;
+      margin: 0 auto 1.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 383px);
+      grid-template-columns: repeat(3, 377px);
       align-items: center;
       justify-content: center;
       grid-gap: 1.5rem;
@@ -324,24 +325,11 @@ html {
   &--section-cover {
     @include cover-poser;
     font-family: $font-two;
-    &-over {
-      @include cover-overtop;
-    }
-    &-txt {
-      @include cover-heading(2.5rem);
-      width: 20%;
-      h1 {
-        font-weight: 900;
-        font-size: 3.75rem;
-      }
-    }
-    &-comp {
-      @include cover-comptext;
-    }
   }
   &--section-iframe {
     position: relative;
-    padding-bottom: 50%;
+    padding-bottom: 49.5%;
+    margin: 1.5rem 5rem;
     height: 0;
     overflow: hidden;
     iframe {
@@ -580,6 +568,7 @@ html {
 // Main --Shop/Surfbards-Page
 .main {
   .products--hero {
+    padding: 1.5rem 0 0;
     &-bg {
       background-position: 0% 77%;
       background-size: cover;
@@ -587,15 +576,16 @@ html {
       width: 100%;
     }
     &-over {
-      background: linear-gradient(0deg, #000000bd, transparent);
+      background: linear-gradient(0deg, #00000069 0%, transparent 50%);
       height: inherit;
       width: inherit;
       position: relative;
       span {
         position: absolute;
         color: white;
+        font-size: 0.85rem;
         bottom: 1rem;
-        margin-left: 5rem;
+        right: 2.5rem;
       }
     }
   }
@@ -743,8 +733,8 @@ html {
 /////// Main --Product-Page
 .main {
   &--product {
+    padding-top: 1.5rem;
     &-header {
-      background: white;
       display: block;
       width: 100%;
     }
