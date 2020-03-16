@@ -3,9 +3,9 @@ import Spinner from "../components/spinner";
 import heroBg from "../assets/images/image4.webp";
 import mainBg from "../assets/images/image5.webp";
 import { DataContext } from "../context/dataContext";
-import softechBg from "../assets/images/Softech-min.jpg";
-import rrdBg from "../assets/images/RRD-min.jpg";
-import libtechBg from "../assets/images/LibTech-min.jpg";
+import softechBg from "../assets/images/Softech-min.webp";
+import rrdBg from "../assets/images/RRD-min.webp";
+import libtechBg from "../assets/images/LibTech-min.webp";
 import logo from "../assets/icons/logo.svg";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     const userGraph =
-      'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"233724914","first":6}';
+      'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"4079200134","first":6}';
     const getThumbnails = async () => {
       try {
         let res = await axios.get(userGraph);

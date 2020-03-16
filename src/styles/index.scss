@@ -48,7 +48,7 @@ html {
   min-width: 100%;
   position: relative;
   &--msg {
-    background-color: $txt-prim-color;
+    background-color: #16a9c6;
     color: $txt-white;
     .container {
       @include nav-flex(flex-end);
@@ -65,9 +65,9 @@ html {
       color: $txt-white;
       margin-left: 0.5rem;
       &:last-of-type {
-        background: #333;
+        background: #0d87a2;
         &:hover {
-          background: #444444;
+          background: #04758e;
         }
       }
     }
@@ -305,7 +305,7 @@ html {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #000000d9;
+        background: #00000078;
         transition: all 0.2s ease-out;
         span {
           font-family: $font-two;
@@ -316,7 +316,7 @@ html {
       }
       &:hover {
         .card--over {
-          background: #00000087;
+          background: #00000033;
         }
       }
     }
