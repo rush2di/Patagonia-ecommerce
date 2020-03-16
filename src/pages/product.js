@@ -69,6 +69,21 @@ const Product = props => {
         </p>
       </div>
       <div className="main--product-details">
+        {data.video && (
+          <div className="iframe-container">
+            <iframe
+              src={data.video}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              secure="true"
+              height="300"
+              width="560"
+              gesture="media"
+              allowFullScreen
+              title="video"
+            />
+          </div>
+        )}
         <div className="details-flex">
           <div className="details-flex-btn">
             <button>MANUAL DOWNLOAD</button>

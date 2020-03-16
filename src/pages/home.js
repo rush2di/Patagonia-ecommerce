@@ -15,7 +15,8 @@ const Home = props => {
   const styles = {
     backgroundImage: `url(${mainBg})`,
     height: 395,
-    backgroundPosition: "bottom"
+    backgroundPosition: "bottom",
+    margin: "0 5rem"
   };
 
   useEffect(() => {
