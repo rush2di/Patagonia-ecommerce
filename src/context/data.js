@@ -39,7 +39,7 @@ export const data = {
             require("../assets/Softech/ST5-BG1.jpg"),
             require("../assets/Softech/ST5-BG2.jpg")
           ],
-          video: "https://www.youtube.com/watch?v=rfWdnsIsLX8"
+          video: "https://www.youtube.com/embed/rfWdnsIsLX8"
         },
         {
           prodName: "ROCKET FISH",
@@ -52,7 +52,7 @@ export const data = {
             require("../assets/Softech/ST6-BG2.jpg"),
             require("../assets/Softech/ST6-BG3.jpg")
           ],
-          video: "https://www.youtube.com/watch?v=ZpDRe8BDnZA"
+          video: "https://www.youtube.com/embed/ZpDRe8BDnZA"
         }
       ]
     },
@@ -67,7 +67,7 @@ export const data = {
           refrence: "24LKFA56",
           image: require("../assets/RRD/RRD1.jpg"),
           album: [require("../assets/RRD/RRD1.jpg")],
-          video: "https://vimeo.com/287464648"
+          video: "https://player.vimeo.com/video/287464648"
         },
         {
           prodName: "IAN ARMSTRONG HUNGRY HYENA",
@@ -79,7 +79,7 @@ export const data = {
             require("../assets/RRD/RRD2-BG1.jpg"),
             require("../assets/RRD/RRD2-BG2.jpg")
           ],
-          video: "https://vimeo.com/287464628"
+          video: "https://player.vimeo.com/video/287464628"
         },
         {
           prodName: "KIATTA V3",
@@ -114,7 +114,7 @@ export const data = {
           refrence: "24YTA60",
           image: require("../assets/RRD/RRD5.jpg"),
           album: [require("../assets/RRD/RRD5.jpg")],
-          video: "https://vimeo.com/287464727"
+          video: "https://player.vimeo.com/video/287464727"
         },
         {
           prodName: "IAN ARMSTRONG MAMBA",
@@ -122,7 +122,7 @@ export const data = {
           refrence: "24MAA90",
           image: require("../assets/RRD/RRD6.jpg"),
           album: [require("../assets/RRD/RRD6.jpg")],
-          video: "https://vimeo.com/287464673"
+          video: "https://player.vimeo.com/video/287464673"
         }
       ]
     },
@@ -152,7 +152,7 @@ export const data = {
             require("../assets/Libtech/LT2.jpg"),
             require("../assets/Libtech/LT2-BG1.jpg")
           ],
-          video: "https://vimeo.com/277560970"
+          video: "https://player.vimeo.com/video/277560970"
         },
         {
           prodName: "LOST PUDDLE JUMPER HP",
@@ -166,7 +166,7 @@ export const data = {
             require("../assets/Libtech/LT3-BG3.jpg"),
             require("../assets/Libtech/LT3-BG4.jpg")
           ],
-          video: "https://vimeo.com/332463815"
+          video: "https://player.vimeo.com/video/332463815"
         }
       ]
     }
