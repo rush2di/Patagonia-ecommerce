@@ -16,13 +16,7 @@ const App = () => {
     <Router>
       <DataContextProvider>
         <div className="main">
-          <React.Suspense
-            fallback={
-              <div className="spinner-wrapper">
-                <Spinner />
-              </div>
-            }
-          >
+          <React.Suspense fallback={<Spinner isFallback={true} />}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/sign-in" component={SignIn} />

@@ -21,18 +21,9 @@ html {
   background: $bg-color;
 }
 
-.spinner-wrapper {
-  height: calc(100vh - 120px);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .spinner {
   @include spinner(2em, 6px double $txt-sec-color, border-width 5px);
-  &--box {
+  &--block {
     height: 100%;
     width: 100%;
     display: flex;
@@ -40,6 +31,14 @@ html {
     margin: 5rem auto;
     justify-content: center;
     align-items: stretch;
+  }
+  &--fallback {
+    height: calc(100vh - 120px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 

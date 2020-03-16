@@ -1,8 +1,9 @@
 import React from "react";
 
-const Spinner = () => {
+const Spinner = ({ isFallback = false }) => {
+  const stylingLogic = isFallback ? "spinner--fallback" : "spinner--block";
   return (
-    <div className="spinner--box">
+    <div className={stylingLogic}>
       <div className="spinner"></div>
     </div>
   );
