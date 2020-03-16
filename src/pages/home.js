@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import Spinner from "../components/spinner";
 import heroBg from "../assets/images/image4.webp";
 import mainBg from "../assets/images/image5.webp";
 import { DataContext } from "../context/dataContext";
@@ -8,7 +9,7 @@ import libtechBg from "../assets/images/LibTech-min.jpg";
 import logo from "../assets/icons/logo.svg";
 import axios from "axios";
 
-const Home = props => {
+const Home = () => {
   const { categories: cards } = useContext(DataContext);
   const [state, setState] = useState({ data: [], hasError: false });
   const covers = [softechBg, rrdBg, libtechBg];
@@ -126,12 +127,4 @@ const Thumbnails = ({ data }) => {
     );
   });
   return <div className="instagram--grid">{dataMapper}</div>;
-};
-
-const Spinner = () => {
-  return (
-    <div className="spinner--box">
-      <div className="spinner"></div>
-    </div>
-  );
 };
