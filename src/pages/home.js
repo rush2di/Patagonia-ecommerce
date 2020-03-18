@@ -21,11 +21,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const userGraph =
+    const instagramAPI =
       'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"4079200134","first":6}';
     const getThumbnails = async () => {
       try {
-        let res = await axios.get(userGraph);
+        let res = await axios.get(instagramAPI);
         let { edges } = res.data.data.user.edge_owner_to_timeline_media;
         setState({ ...state, data: edges });
       } catch (error) {
@@ -93,7 +93,7 @@ const Home = () => {
             state.hasError || <Spinner />
           )}
           {state.hasError && (
-            <div className="spinner--box">
+            <div className="spinner--block">
               <p>An unexpected error occurred while fetching data</p>
             </div>
           )}

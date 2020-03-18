@@ -244,26 +244,27 @@ html {
       line-height: 1.6;
       justify-content: center;
       text-align: center;
-      width: 650px;
+      width: 750px;
       margin: 0 auto;
       p {
         color: $txt-paragraph;
-        font-size: 0.95rem;
+        font-size: 1.15rem;
         font-weight: 500;
         text-transform: lowercase;
         font-family: $font-two;
       }
       div {
-        width: 160px;
+        width: 190px;
         display: inline-block;
-        margin-bottom: 0.95rem;
+        margin-bottom: 1rem;
       }
       button {
         background: #000000;
-        margin-top: 1.5rem;
-        font-weight: 700;
+        margin-top: 1.95rem;
+        font-weight: 500;
         cursor: pointer;
-        padding: 1rem;
+        font-size: 0.95rem;
+        padding: 0.95rem 1rem;
         color: white;
         border: 0;
         &:hover {
@@ -891,6 +892,78 @@ html {
           &:last-of-type {
             color: #3f9409;
             font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+/////// Main --Cart-Page
+.main {
+  &--cart {
+    padding: 2rem 0 0;
+    &-msg {
+      width: max-content;
+      line-height: 1.5;
+      margin: 4rem auto 7rem;
+    }
+    .msg-box {
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 1.15rem;
+        font-weight: 500;
+        margin: 0 0 0.75rem 0;
+      }
+      p {
+        color: $txt-paragraph;
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      button {
+        margin: 0.95rem 0 0;
+        border: 0;
+        padding: 0.65rem 0.75rem;
+        color: white;
+        background: #151515;
+        &:hover {
+          background: #242424;
+        }
+      }
+      a {
+        margin: 1rem 0;
+        color: $txt-sec-color;
+        &:hover {
+          color: midnightblue;
+        }
+      }
+    }
+    &-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: baseline;
+      justify-content: space-between;
+      .footer-box {
+        ul {
+          margin: 0.5rem 0 2rem;
+          list-style: none;
+          line-height: 2;
+          color: $txt-paragraph;
+        }
+        li {
+          font-size: 0.85rem;
+        }
+        .flex-cards {
+          display: flex;
+          flex-wrap: nowrap;
+          img {
+            width: 65px;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
           }
         }
       }
