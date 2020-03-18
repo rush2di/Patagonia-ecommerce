@@ -3,7 +3,7 @@ export const data = {
     {
       id: "Softech-18x",
       name: "SOFTECH",
-      cover: require("../assets/images/Softech-min.jpg"),
+      cover: require("../assets/images/Softech-min.webp"),
       products: [
         {
           prodName: "MYSTERY BOX",
@@ -59,7 +59,7 @@ export const data = {
     {
       id: "RRD-90x",
       name: "RRD",
-      cover: require("../assets/images/RRD-min.jpg"),
+      cover: require("../assets/images/RRD-min.webp"),
       products: [
         {
           prodName: "IAN ARMSTRONG LUCKY FISH V2",
@@ -129,7 +129,7 @@ export const data = {
     {
       id: "LIB-TECH-05x",
       name: "LIB TECH",
-      cover: require("../assets/images/LibTech-min.jpg"),
+      cover: require("../assets/images/LibTech-min.webp"),
       products: [
         {
           prodName: "LOST KA SWORDFISH",
