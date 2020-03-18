@@ -4,8 +4,8 @@
   justify-content: $flex-position;
 }
 
-@mixin cover-poser() {
-  background-position: left top;
+@mixin cover-poser($position: left top) {
+  background-position: $position;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -14,13 +14,12 @@
   width: 100%;
   height: 100%;
   color: white;
-  background: linear-gradient(0deg, #001a41f0, transparent);
   position: relative;
 }
 
 @mixin cover-heading($val: 5rem) {
   position: absolute;
-  left: 5rem;
+  right: 3rem;
   top: $val;
 }
 
@@ -38,10 +37,9 @@
   }
 }
 
-@mixin iframeContainer($size: 49.5%, $fixer: 0 5rem 1.5rem) {
+@mixin iframeContainer($size: 49.5%) {
   position: relative;
   padding-bottom: $size;
-  margin: $fixer;
   height: 0;
   overflow: hidden;
   iframe {

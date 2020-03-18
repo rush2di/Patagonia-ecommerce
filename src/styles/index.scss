@@ -22,7 +22,7 @@ html {
 }
 
 .spinner {
-  @include spinner(2em, 6px double $txt-sec-color, border-width 5px);
+  @include spinner(2em, 6px double, #0b9bb7, border-width 5px);
   &--block {
     height: 100%;
     width: 100%;
@@ -48,7 +48,7 @@ html {
   min-width: 100%;
   position: relative;
   &--msg {
-    background-color: #16a9c6;
+    background-color: #0b9bb7;
     color: $txt-white;
     .container {
       @include nav-flex(flex-end);
@@ -232,7 +232,7 @@ html {
 /////// Main --Landing-Page
 .main {
   &--hero {
-    height: 550px;
+    height: calc(100vh - 87px);
     @include cover-poser;
   }
   &--section-intro {
@@ -276,9 +276,16 @@ html {
   &--section-prods {
     height: 100%;
     width: 100%;
+    background: white;
     &-box {
       display: block;
       overflow: hidden;
+      h3 {
+        margin: 1.5rem auto;
+        text-align: center;
+        font-weight: 700;
+        font-family: $font-two;
+      }
       h4 {
         text-align: center;
         font-weight: 400;
@@ -288,9 +295,9 @@ html {
     &-grid {
       margin: 0 auto 1.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 380px);
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       grid-gap: 1.5rem;
     }
     .card {
@@ -323,19 +330,51 @@ html {
     }
   }
   &--section-cover {
-    @include cover-poser;
+    @include cover-poser(right bottom);
     font-family: $font-two;
+    .cover-over {
+      @include cover-overtop;
+      &-txt {
+        @include cover-heading(4rem);
+        text-align: right;
+        h3 {
+          font-size: 3.5rem;
+          font-weight: 800;
+          width: 70%;
+          margin-left: auto;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1rem;
+          color: white;
+          font-weight: 500;
+        }
+        button {
+          color: #fff4df;
+          border: 0;
+          margin-top: 2rem;
+          padding: 0.75rem 0.8rem;
+          cursor: pointer;
+          background: #ff7600;
+          &:hover {
+            background: #d33e18;
+          }
+        }
+      }
+    }
   }
   &--section-iframe {
     @include iframeContainer(49.5%);
   }
   &--section-instagram {
+    font-family: $font-two;
     width: 100%;
     height: 100%;
     display: block;
-    padding: 0.5rem 0;
+    padding: 2rem 0 3rem;
     h4 {
-      font-weight: 400;
+      font-weight: 500;
+      margin-bottom: 0.45rem;
     }
     .container {
       display: flex;
@@ -343,7 +382,65 @@ html {
       align-items: center;
     }
   }
+  &--section-grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    .grid-txt {
+      display: flex;
+      padding: 1.5rem 2.5rem;
+      font-family: $font-two;
+      line-height: 1.75;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 0.85rem;
+        color: $txt-paragraph;
+        margin: 1rem 0;
+      }
+      button {
+        align-self: baseline;
+        cursor: pointer;
+        margin: 1rem 0;
+        border: 0;
+        font-weight: 600;
+        padding: 0.75rem 0.56rem;
+        border: 1.5px solid;
+        background: transparent;
+        &:hover {
+          background: #0000001a;
+        }
+      }
+    }
+    .grid-img {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
   .instagram {
+    &-username {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      span {
+        font-weight: 600;
+        margin: 0 0.5rem;
+      }
+      img {
+        width: 14px;
+        margin-left: 0.15rem;
+        margin-bottom: -0.1rem;
+      }
+    }
     &--grid {
       display: grid;
       grid-template-columns: repeat(3, 320px);
@@ -773,7 +870,7 @@ html {
         margin: 0 !important;
       }
       .iframe-container {
-        @include iframeContainer($fixer: 0);
+        @include iframeContainer();
       }
       .details-flex {
         color: #f9f9f9;
