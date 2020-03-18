@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import Spinner from "../components/spinner";
 import heroBg from "../assets/images/image4.webp";
 import mainBg from "../assets/images/image5.webp";
+import image1 from "../assets/images/image1.webp";
+import image2 from "../assets/images/image2.webp";
 import { DataContext } from "../context/dataContext";
 import softechBg from "../assets/images/Softech-min.webp";
 import rrdBg from "../assets/images/RRD-min.webp";
 import libtechBg from "../assets/images/LibTech-min.webp";
 import logo from "../assets/icons/logo.svg";
+import IGVerified from "../assets/icons/IGVerified.svg";
 import axios from "axios";
 
 const Home = () => {
@@ -15,9 +18,7 @@ const Home = () => {
   const covers = [softechBg, rrdBg, libtechBg];
   const styles = {
     backgroundImage: `url(${mainBg})`,
-    height: 395,
-    backgroundPosition: "bottom",
-    margin: "0 5rem"
+    height: 395
   };
 
   useEffect(() => {
@@ -66,11 +67,20 @@ const Home = () => {
       <div className="main--section-prods">
         <div className="main--section-prods-box">
           <div className="container">
+            <h3>DISCOVER OUR SURFBOARDS</h3>
             <div className="main--section-prods-grid">{cardsMapper}</div>
           </div>
         </div>
-        <div className="main--section-cover" style={styles}></div>
-        <div className="main--section-iframe">
+        <div className="main--section-cover container" style={styles}>
+          <div className="cover-over">
+            <div className="cover-over-txt">
+              <h3>NO MORE BAILOUTS</h3>
+              <p>slide your way to mastery with the new Mason Twin v2</p>
+              <button>DISCOVER NOW</button>
+            </div>
+          </div>
+        </div>
+        <div className="main--section-iframe container">
           <iframe
             src="https://www.youtube.com/embed/XqeP2fYyw4g"
             frameBorder="0"
@@ -83,10 +93,17 @@ const Home = () => {
             title="video"
           />
         </div>
+        <div className="main--section-grid container">
+          <GridItems />
+        </div>
       </div>
       <div className="main--section-instagram">
         <div className="container">
-          <h4>FOLLOW US ON INSTAGRAM</h4>
+          <div className="instagram-username">
+            <span>
+              FOLLOW US @PATAGONIA_SURF <img src={IGVerified} alt="" />
+            </span>
+          </div>
           {!!state.data.length ? (
             <Thumbnails data={state.data} />
           ) : (
@@ -127,4 +144,33 @@ const Thumbnails = ({ data }) => {
     );
   });
   return <div className="instagram--grid">{dataMapper}</div>;
+};
+
+const GridItems = () => {
+  return (
+    <React.Fragment>
+      <div className="grid-txt">
+        <h3>FCS II SYSTEM</h3>
+        <p>
+          Selected new season models now come with the FCS II system (no screws
+          or key). Change your fins depending on conditions & how you want to
+          surf.
+        </p>
+        <button className="btn btn-outline">DISCOVER NOW</button>
+      </div>
+      <div className="grid-img">
+        <img src={image1} alt="" />
+      </div>
+      <div className="grid-img">
+        <img src={image2} alt="" />
+      </div>
+      <div className="grid-txt">
+        <h3>THE LOST PUDDLE JUMPER HP</h3>
+        <p>
+          The lost puddle jumper has just dropped, you can buy your own now !
+        </p>
+        <button className="btn btn-outline">DISCOVER NOW</button>
+      </div>
+    </React.Fragment>
+  );
 };
