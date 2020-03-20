@@ -54,12 +54,10 @@ const Home = () => {
             <img src={logo} alt="patagonia" />
           </div>
           <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Staying true to our core values during thirty-plus years in business
+            has helped us create a company we’re proud to run and work for. And
+            our focus on making the best products possible has brought us
+            success in the marketplace.
           </p>
           <button>OUR STORY</button>
         </div>
