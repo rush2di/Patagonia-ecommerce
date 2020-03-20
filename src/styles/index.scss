@@ -22,7 +22,12 @@ html {
 }
 
 .spinner {
-  @include spinner(2em, 6px double, #0b9bb7, border-width 5px);
+  @include spinner(
+    2em,
+    6px double #0084c3,
+    border-width 5px,
+    border-color #0084c3
+  );
   &--block {
     height: 100%;
     width: 100%;
@@ -48,7 +53,7 @@ html {
   min-width: 100%;
   position: relative;
   &--msg {
-    background-color: #0b9bb7;
+    background-color: #0084c3;
     color: $txt-white;
     .container {
       @include nav-flex(flex-end);
@@ -64,10 +69,11 @@ html {
       background: transparent;
       color: $txt-white;
       margin-left: 0.5rem;
+      font-size: 0.75rem;
       &:last-of-type {
-        background: #0d87a2;
+        background: #00739e;
         &:hover {
-          background: #04758e;
+          background: #176092;
         }
       }
     }

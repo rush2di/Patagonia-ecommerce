@@ -10,6 +10,7 @@ const SignUp = React.lazy(() => import("./pages/signUp"));
 const Products = React.lazy(() => import("./pages/products"));
 const Product = React.lazy(() => import("./pages/product"));
 const Cart = React.lazy(() => import("./pages/cart"));
+const About = React.lazy(() => import("./pages/about"));
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/shop/surfboards" component={Products} />
               <Route path="/shop/surfboard/:ref" component={Product} />
               <Route path="/user/cart" component={Cart} />
+              <Route path="/about" component={About} />
             </Switch>
           </React.Suspense>
         </div>
