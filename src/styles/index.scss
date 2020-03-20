@@ -1002,6 +1002,7 @@ html {
     }
   }
 }
+
 /////// Main --Cart-Page
 .main {
   &--cart {
@@ -1071,6 +1072,35 @@ html {
           }
         }
       }
+    }
+  }
+}
+
+/////// Main --About-Page
+.main {
+  &--about {
+    padding: 0 0 2rem;
+    &-hero {
+      padding: 0 2rem;
+      img {
+        width: 100%;
+        margin: 2rem 0;
+        &:last-of-type {
+          margin: 2rem 0 1.5rem;
+        }
+      }
+      p {
+        color: $txt-paragraph;
+        line-height: 1.5;
+        font-size: 1rem;
+        &:nth-child(n + 3) {
+          margin: 0 0 1.5rem;
+        }
+      }
+    }
+    &-iframe {
+      @include iframeContainer();
+      margin: 0 2rem;
     }
   }
 }
