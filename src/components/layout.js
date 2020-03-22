@@ -24,7 +24,11 @@ export default Layout;
 const NavBar = () => {
   const { categories } = useContext(DataContext);
   const categoriesMapper = categories.map(cat => {
-    return <li key={`cat${cat.id}`}>{cat.name}</li>;
+    return (
+      <li key={`cat${cat.id}`}>
+        <Link to={`/shop/surfboards/${cat.id}`}>{cat.name}</Link>
+      </li>
+    );
   });
 
   return (
@@ -46,7 +50,9 @@ const NavBar = () => {
             </Link>
           </div>
           <ul className="nav--items">
-            <li>Surfboards</li>
+            <li>
+              <Link to="/shop/surfboards">Surfboards</Link>
+            </li>
             {categoriesMapper}
           </ul>
           <div className="nav--icons">
@@ -54,7 +60,9 @@ const NavBar = () => {
               <img src={searchIcon} alt="" />
             </button>
             <button>
-              <img src={cartIcon} alt="" />
+              <Link to="/user/cart">
+                <img src={cartIcon} alt="" />
+              </Link>
             </button>
           </div>
         </div>
