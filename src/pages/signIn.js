@@ -1,5 +1,6 @@
 import React from "react";
 import Forms from "../components/forms";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -36,7 +37,11 @@ export const CreateAccount = ({ showBtn }) => {
         <li>Archive purchases and order history</li>
         <li>Register purchased surfboards and warranties</li>
       </ul>
-      {!!showBtn && <button>CREATE ACCOUNT</button>}
+      {!!showBtn && (
+        <button>
+          <Link to="/sign-up">CREATE ACCOUNT</Link>
+        </button>
+      )}
     </div>
   );
 };
