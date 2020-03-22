@@ -9,6 +9,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 html {
   font-family: $font-one;
 }
@@ -120,7 +124,7 @@ html {
         img {
           width: 22px;
         }
-        &:last-of-type {
+        a {
           img {
             width: 36px;
           }
@@ -196,6 +200,7 @@ html {
     }
     a {
       font-weight: 700;
+      text-decoration: underline;
     }
   }
   &--gridbox-sec {
