@@ -11,7 +11,7 @@ const Product = props => {
       </div>
     );
   });
-  console.log(data);
+
   return (
     <div className="main--product container">
       <div className="main--product-header">

@@ -10,12 +10,17 @@ import rrdBg from "../assets/images/RRD-min.webp";
 import libtechBg from "../assets/images/LibTech-min.webp";
 import logo from "../assets/icons/logo.svg";
 import IGVerified from "../assets/icons/IGVerified.svg";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
   const { categories: cards } = useContext(DataContext);
   const [state, setState] = useState({ data: [], hasError: false });
   const covers = [softechBg, rrdBg, libtechBg];
+  const routeParams = {
+    pathname: `/shop/surfboard/${cards[0].products[2].refrence}`,
+    state: cards[0].products[2]
+  };
   const styles = {
     backgroundImage: `url(${mainBg})`,
     height: 395
@@ -39,7 +44,7 @@ const Home = () => {
   }, [state]);
 
   const cardsMapper = cards.map((card, i) => {
-    return <Card key={i} name={card.name} bg={covers[i]} />;
+    return <Card key={i} name={card.name} id={card.id} bg={covers[i]} />;
   });
 
   return (
@@ -59,7 +64,9 @@ const Home = () => {
             our focus on making the best products possible has brought us
             success in the marketplace.
           </p>
-          <button>OUR STORY</button>
+          <button>
+            <Link to="/about">OUR STORY</Link>
+          </button>
         </div>
       </div>
       <div className="main--section-prods">
@@ -74,7 +81,9 @@ const Home = () => {
             <div className="cover-over-txt">
               <h3>NO MORE BAILOUTS</h3>
               <p>slide your way to mastery with the new Mason Twin v2</p>
-              <button>DISCOVER NOW</button>
+              <button>
+                <Link to={routeParams}>DISCOVER NOW</Link>
+              </button>
             </div>
           </div>
         </div>
@@ -120,15 +129,15 @@ const Home = () => {
 
 export default Home;
 
-const Card = ({ name, bg }) => {
+const Card = ({ name, bg, id }) => {
   return (
-    <React.Fragment>
+    <Link to={`shop/surfboards/${id}`}>
       <div className="card" style={{ backgroundImage: `url(${bg})` }}>
         <div className="card--over">
           <span>{name}</span>
         </div>
       </div>
-    </React.Fragment>
+    </Link>
   );
 };
 
