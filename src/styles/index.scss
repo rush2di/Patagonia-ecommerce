@@ -1102,5 +1102,30 @@ html {
       @include iframeContainer();
       margin: 0 2rem;
     }
+    &-jobs {
+      padding: 1.5rem 2rem;
+      h3 {
+        margin: 0 0 0.5rem;
+        width: fit-content;
+        font-size: 1.15rem;
+        font-family: $font-two;
+      }
+      p {
+        color: $txt-paragraph;
+        line-height: 1.5;
+      }
+      button {
+        margin-left: auto;
+        padding: 0.65rem 0.75rem;
+        border: 0;
+        background-color: black;
+        cursor: pointer;
+        color: white;
+        display: block;
+        &:hover {
+          background: #242424;
+        }
+      }
+    }
   }
 }
