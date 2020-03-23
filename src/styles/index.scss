@@ -19,6 +19,13 @@ html {
 .container {
   width: 1200px;
   margin: 0 auto;
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 3rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
 }
 .main {
   min-height: calc(100vh - 87px);
@@ -469,6 +476,86 @@ html {
       }
     }
   }
+  @media (max-width: 1200px) {
+    .instagram {
+      &--grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2em;
+      }
+      &--img {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    }
+    .main--section-cover {
+      background-position: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .main--hero {
+      height: 50vh;
+    }
+    .main--section-intro {
+      &-box {
+        width: 90%;
+      }
+    }
+    .main--section-prods-box {
+      display: none;
+    }
+    .main--section-cover {
+      background-position: center bottom;
+    }
+    .main--section-grid {
+      padding: 0 !important;
+    }
+    .instagram {
+      &--grid {
+        grid-gap: 1rem;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .main--section-intro-box {
+      div {
+        width: 140px;
+      }
+      p {
+        font-size: 0.85rem;
+      }
+      button {
+        padding: 0.75rem 0.5rem;
+        margin-top: 1.65rem;
+      }
+    }
+    .main--section-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "img1"
+        "row1"
+        "img2"
+        "row2";
+      div {
+        &:nth-child(2) {
+          grid-area: img1;
+        }
+      }
+    }
+    .main--section-cover {
+      height: 300px !important;
+      .cover-over-txt {
+        right: 1rem;
+        top: 3rem;
+        h3 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
 }
 
 /////// Main --Sign-In-Page
@@ -573,6 +660,16 @@ html {
       }
     }
   }
+  @media (max-width: 1200px) {
+    .main--signin-wrapper {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+  @media (max-width: 768px) {
+    .main--signin-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 /////// Main --Sign-Up-Page
@@ -659,6 +756,24 @@ html {
       input {
         margin-right: 0.5rem !important;
       }
+    }
+  }
+  @media (max-width: 1000px) {
+    .main--signup-wrapper {
+      .signin-content-sec {
+        margin: 0 1.25rem;
+      }
+      .main--signup-content-note {
+        margin: 0 1.25rem 1rem;
+      }
+      form {
+        padding: 0 1.25rem;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .main--signup-content {
+      width: 100%;
     }
   }
 }
@@ -1130,6 +1245,26 @@ html {
         &:hover {
           background: #242424;
         }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .main--about-hero {
+      padding: 0 1rem;
+      img {
+        margin: 1.5rem 0;
+        &:last-of-type {
+          margin: 1.5rem 0;
+        }
+      }
+    }
+    .main--about-iframe {
+      margin: 0 1rem;
+    }
+    .main--about-jobs {
+      padding: 1.5rem 1rem;
+      button {
+        margin-top: 1rem;
       }
     }
   }
