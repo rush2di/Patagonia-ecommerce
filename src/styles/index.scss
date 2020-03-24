@@ -1155,12 +1155,14 @@ html {
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .main--product-header {
       .container {
         padding: 0;
       }
     }
+  }
+  @media (max-width: 768px) {
     .main--product-desc {
       margin: 2rem auto 0;
       width: 100%;
