@@ -314,6 +314,36 @@ html {
       }
     }
   }
+  @media (max-width: 768px) {
+    height: 100%;
+    .footer--grid-wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "input input"
+        "links links";
+    }
+    .footer--gridbox-ft {
+      grid-area: input;
+      text-align: center;
+      form {
+        flex-direction: column;
+        button {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .footer--gridbox-sec {
+      margin-top: 1rem;
+      grid-area: links;
+      ul {
+        margin-bottom: 1.5rem;
+        justify-content: center;
+      }
+    }
+    .footer--gridbox-thr {
+      display: none;
+    }
+  }
 }
 
 /////// Main --Landing-Page
@@ -605,10 +635,13 @@ html {
     }
   }
   @media (max-width: 500px) {
+    .main--section-intro {
+      padding: 2rem 0 2.5rem;
+    }
     .main--section-cover {
       height: 230px !important;
       .cover-over {
-        width: 100vw;
+        width: calc(100% + 3rem);
         background: linear-gradient(-10deg, #4e4e4ed9, transparent);
         margin: 0 -1.5rem;
         .cover-over-txt {
@@ -661,6 +694,9 @@ html {
         "row1"
         "img2"
         "row2";
+      .grid-txt button {
+        margin: 1rem 0 0 auto !important;
+      }
       div {
         &:nth-child(2) {
           grid-area: img1;
@@ -1300,6 +1336,7 @@ html {
         margin: 0;
         button {
           margin: 2rem auto 0;
+          font-size: 0.75rem;
         }
       }
     }
@@ -1389,6 +1426,27 @@ html {
           }
         }
       }
+    }
+  }
+  @media (max-width: 1200px) {
+    .main--cart {
+      padding: 2rem 3rem 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .main--cart {
+      padding: 2rem 1.5rem 0;
+    }
+    .main--cart-footer {
+      grid-template-columns: 1fr 1fr;
+      .flex-cards:last-of-type {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .main--cart-footer {
+      grid-template-columns: 1fr;
     }
   }
 }
