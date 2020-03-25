@@ -4,6 +4,8 @@ import cartIcon from "../assets/icons/ShoppingCartIcon.svg";
 import Logo from "../assets/icons/logo.svg";
 import facebook from "../assets/icons/facebook.svg";
 import instagram from "../assets/icons/instagram.svg";
+import userIcon from "../assets/icons/UserIcon.svg";
+import menuIcon from "../assets/icons/MenuIcon.svg";
 import twitter from "../assets/icons/twitter.svg";
 import youtube from "../assets/icons/youtube.svg";
 import { DataContext } from "../context/dataContext";
@@ -62,6 +64,35 @@ const NavBar = () => {
             <button>
               <Link to="/user/cart">
                 <img src={cartIcon} alt="" />
+              </Link>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <nav className="nav--sm">
+        <div className="container">
+          <div className="nav--items">
+            <button>
+              <img src={menuIcon} alt="" />
+            </button>
+            <button>
+              <img src={searchIcon} alt="" />
+            </button>
+          </div>
+          <div className="nav--Logo">
+            <Link to="/">
+              <img src={Logo} alt="Patagonia" />
+            </Link>
+          </div>
+          <div className="nav--items">
+            <button>
+              <Link to="/user/cart">
+                <img src={cartIcon} alt="" />
+              </Link>
+            </button>
+            <button>
+              <Link to="/sign-in">
+                <img src={userIcon} alt="" />
               </Link>
             </button>
           </div>

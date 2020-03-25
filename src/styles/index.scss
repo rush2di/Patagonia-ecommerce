@@ -141,6 +141,75 @@ html {
         }
       }
     }
+    &--sm {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    .nav {
+      height: 100%;
+      .container {
+        display: none;
+      }
+    }
+    .head--msg {
+      button,
+      a {
+        display: none;
+      }
+      span {
+        margin: 0 auto !important;
+        padding: 0.5rem 0;
+      }
+    }
+    .nav--sm {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .nav--Logo {
+          width: 115px;
+        }
+      }
+      button {
+        border: 0;
+        outline: none;
+        background: transparent;
+        display: flex;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+      .nav--items {
+        &:first-child {
+          button:first-child {
+            width: 30px;
+            margin-right: 1rem;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        &:last-of-type {
+          button:first-child {
+            img {
+              width: 40px;
+              object-position: top;
+              object-fit: cover;
+              height: 35px;
+              margin-right: 0.5rem;
+            }
+          }
+          img {
+            width: 25px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -490,6 +559,11 @@ html {
     }
     .main--section-cover {
       background-position: center;
+      .cover-over {
+        &-txt {
+          right: 1rem;
+        }
+      }
     }
   }
   @media (max-width: 768px) {
@@ -501,8 +575,22 @@ html {
         width: 90%;
       }
     }
+    .main--section-iframe {
+      @include iframeContainer(56.26%);
+    }
     .main--section-prods-box {
-      display: none;
+      margin: 0;
+      grid-gap: 0;
+    }
+    .main--section-prods {
+      .card {
+        background-position: center;
+        height: 405px;
+      }
+      &-grid {
+        margin: 0 auto 1rem;
+        grid-gap: 1rem;
+      }
     }
     .main--section-cover {
       background-position: center bottom;
@@ -517,6 +605,25 @@ html {
     }
   }
   @media (max-width: 500px) {
+    .main--section-cover {
+      height: 230px !important;
+      .cover-over {
+        width: 100vw;
+        background: linear-gradient(-10deg, #4e4e4ed9, transparent);
+        margin: 0 -1.5rem;
+        .cover-over-txt {
+          right: 1rem;
+          width: 188px;
+          top: 1.5rem;
+          h3 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
     .main--section-intro-box {
       div {
         width: 140px;
@@ -527,6 +634,24 @@ html {
       button {
         padding: 0.75rem 0.5rem;
         margin-top: 1.65rem;
+      }
+    }
+    .main--section-prods-box {
+      .container {
+        padding: 0 1rem;
+      }
+    }
+    .main--section-prods-grid {
+      grid-gap: 0;
+      .card {
+        height: 235px;
+        background-position: center;
+        &--over {
+          background: #000000b8;
+          span {
+            font-size: 0.95rem;
+          }
+        }
       }
     }
     .main--section-grid {
@@ -542,17 +667,15 @@ html {
         }
       }
     }
-    .main--section-cover {
-      height: 300px !important;
-      .cover-over-txt {
-        right: 1rem;
-        top: 3rem;
-        h3 {
-          font-size: 2.5rem;
-        }
-        p {
-          font-size: 0.75rem;
-        }
+    .main--section-grid .grid-img img {
+      width: 100%;
+      object-fit: cover;
+      height: 230px;
+    }
+    .main--section-instagram .container {
+      padding: 0 0.5rem;
+      .instagram--grid {
+        grid-gap: 0.5rem;
       }
     }
   }
