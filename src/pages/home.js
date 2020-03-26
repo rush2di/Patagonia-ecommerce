@@ -27,20 +27,26 @@ const Home = () => {
   };
 
   useEffect(() => {
+    let isSubscribed = true;
     const instagramAPI =
       'https://cors-anywhere.herokuapp.com/https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={"id":"4079200134","first":6}';
     const getThumbnails = async () => {
       try {
         let res = await axios.get(instagramAPI);
         let { edges } = res.data.data.user.edge_owner_to_timeline_media;
-        setState({ ...state, data: edges });
+        if (isSubscribed) {
+          setState({ ...state, data: edges });
+        }
       } catch (error) {
-        setState({ ...state, hasError: true });
+        if (isSubscribed) {
+          setState({ ...state, hasError: true });
+        }
       }
     };
     if (!!state.data.length === false && state.hasError === false) {
       getThumbnails();
     }
+    return () => (isSubscribed = false);
   }, [state]);
 
   const cardsMapper = cards.map((card, i) => {
