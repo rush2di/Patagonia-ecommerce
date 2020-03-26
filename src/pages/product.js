@@ -91,41 +91,43 @@ const Product = props => {
           <div className="details-flex-txt">
             <p>TECHNICAL SPECIFICATIONS</p>
             <table className="details-flex-table">
-              <tr className="table-data--row">
-                <td className="table-data--main">Size</td>
-                <td className="table-data--specs"> 5'2" / 5'6" / 5'10"</td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Dimensions</td>
-                <td className="table-data--specs">
-                  5'2" x 19 2/3" x 2 5/8" , 5'6" x 21" x 2 5/8" , 5'10" x 21 x 2
-                  3/4
-                </td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Core</td>
-                <td className="table-data--specs">
-                  100% Waterproof X-Density EPS Foam Core
-                </td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Stringer</td>
-                <td className="table-data--specs">Double Stringer</td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Fin Setup</td>
-                <td className="table-data--specs">
-                  Twin (x2 FCS II Fin Setup)
-                </td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Fin System</td>
-                <td className="table-data--specs">FCS II</td>
-              </tr>
-              <tr className="table-data--row">
-                <td className="table-data--main">Volume</td>
-                <td className="table-data--specs">5'2": 31L | 5'6": 35L</td>
-              </tr>
+              <tbody>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Size</td>
+                  <td className="table-data--specs"> 5'2" / 5'6" / 5'10"</td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Dimensions</td>
+                  <td className="table-data--specs">
+                    5'2" x 19 2/3" x 2 5/8" , 5'6" x 21" x 2 5/8" , 5'10" x 21 x
+                    2 3/4
+                  </td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Core</td>
+                  <td className="table-data--specs">
+                    100% Waterproof X-Density EPS Foam Core
+                  </td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Stringer</td>
+                  <td className="table-data--specs">Double Stringer</td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Fin Setup</td>
+                  <td className="table-data--specs">
+                    Twin (x2 FCS II Fin Setup)
+                  </td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Fin System</td>
+                  <td className="table-data--specs">FCS II</td>
+                </tr>
+                <tr className="table-data--row">
+                  <td className="table-data--main">Volume</td>
+                  <td className="table-data--specs">5'2": 31L | 5'6": 35L</td>
+                </tr>
+              </tbody>
             </table>
             <p className="extra-info">+ Leash Plug installed</p>
             <p className="extra-info">+ FCS II Softflex Fins included</p>
