@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import searchIcon from "../assets/icons/SearchIcon.svg";
 import cartIcon from "../assets/icons/ShoppingCartIcon.svg";
 import Logo from "../assets/icons/logo.svg";
@@ -24,6 +24,7 @@ const Layout = props => {
 export default Layout;
 
 const NavBar = () => {
+  const [searchBar, setSearchBar] = useState(false);
   const { categories } = useContext(DataContext);
   const categoriesMapper = categories.map(cat => {
     return (
@@ -32,6 +33,9 @@ const NavBar = () => {
       </li>
     );
   });
+  const searchBarToggler = () => {
+    setSearchBar(!searchBar);
+  };
 
   return (
     <div className="head">
@@ -58,7 +62,7 @@ const NavBar = () => {
             {categoriesMapper}
           </ul>
           <div className="nav--icons">
-            <button>
+            <button onClick={searchBarToggler}>
               <img src={searchIcon} alt="" />
             </button>
             <button>
@@ -75,7 +79,7 @@ const NavBar = () => {
             <button>
               <img src={menuIcon} alt="" />
             </button>
-            <button>
+            <button onClick={searchBarToggler}>
               <img src={searchIcon} alt="" />
             </button>
           </div>
@@ -98,6 +102,21 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
+      <SearchFlied isOpen={searchBar} searchBtn={searchBarToggler} />
+    </div>
+  );
+};
+
+const SearchFlied = ({ isOpen, searchBtn }) => {
+  const toggler = isOpen ? "--open" : "--closed";
+  return (
+    <div className="nav--search-field">
+      <div className={`search-field-drawer ${toggler}`}>
+        <div className="container">
+          <input type="text" name="search" />
+          <button onClick={() => searchBtn()}>Search</button>
+        </div>
+      </div>
     </div>
   );
 };
