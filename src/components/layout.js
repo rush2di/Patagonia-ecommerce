@@ -25,6 +25,7 @@ export default Layout;
 
 const NavBar = () => {
   const [searchBar, setSearchBar] = useState(false);
+  const [sideNav, setSideNav] = useState(false);
   const { categories } = useContext(DataContext);
   const categoriesMapper = categories.map(cat => {
     return (
@@ -35,6 +36,9 @@ const NavBar = () => {
   });
   const searchBarToggler = () => {
     setSearchBar(!searchBar);
+  };
+  const sideNavToggler = () => {
+    setSideNav(!sideNav);
   };
 
   return (
@@ -76,7 +80,7 @@ const NavBar = () => {
       <nav className="nav--sm">
         <div className="container">
           <div className="nav--items">
-            <button>
+            <button onClick={sideNavToggler}>
               <img src={menuIcon} alt="" />
             </button>
             <button onClick={searchBarToggler}>
@@ -103,6 +107,11 @@ const NavBar = () => {
         </div>
       </nav>
       <SearchFlied isOpen={searchBar} searchBtn={searchBarToggler} />
+      <MobileNav
+        isOpen={sideNav}
+        exit={sideNavToggler}
+        menuListItems={categoriesMapper}
+      />
     </div>
   );
 };
@@ -117,6 +126,40 @@ const SearchFlied = ({ isOpen, searchBtn }) => {
           <button onClick={() => searchBtn()}>Search</button>
         </div>
       </div>
+    </div>
+  );
+};
+
+const MobileNav = ({ menuListItems, isOpen, exit }) => {
+  const toggler = isOpen ? "--open-nav" : "--close-nav";
+  return (
+    <div className={`side-nav ${toggler}`}>
+      <div className="side-nav--wrapper">
+        <div className="side-drawer-catgs">
+          <div onClick={() => exit()} className="side-drawer-exit">
+            <div className="exit-btn"></div>
+          </div>
+          <div className="side-drawer-tabs">
+            <div className="tabs-shop">
+              <p>SHOP</p>
+            </div>
+            <div className="tabs-about">
+              <Link to="/about">
+                <p>ABOUT US</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="side-nav--menu">
+          <ul>
+            <li>
+              <Link to="/shop/surfboards">Surfboards</Link>
+            </li>
+            {menuListItems}
+          </ul>
+        </div>
+      </div>
+      <p className="side-nav--footer">Made For Surfers, By Surfers</p>
     </div>
   );
 };
