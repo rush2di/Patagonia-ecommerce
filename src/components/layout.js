@@ -21,19 +21,10 @@ const Layout = props => {
   );
 };
 
-export default Layout;
-
 const NavBar = () => {
   const [searchBar, setSearchBar] = useState(false);
   const [sideNav, setSideNav] = useState(false);
   const { categories } = useContext(DataContext);
-  const categoriesMapper = categories.map(cat => {
-    return (
-      <li key={`cat${cat.id}`}>
-        <Link to={`/shop/surfboards/${cat.id}`}>{cat.name}</Link>
-      </li>
-    );
-  });
   const searchBarToggler = () => {
     setSearchBar(!searchBar);
   };
@@ -59,12 +50,7 @@ const NavBar = () => {
               <img src={Logo} alt="Patagonia" />
             </Link>
           </div>
-          <ul className="nav--items">
-            <li>
-              <Link to="/shop/surfboards">Surfboards</Link>
-            </li>
-            {categoriesMapper}
-          </ul>
+          <MenuListItems categories={categories} />
           <div className="nav--icons">
             <button onClick={searchBarToggler}>
               <img src={searchIcon} alt="" />
@@ -110,7 +96,7 @@ const NavBar = () => {
       <MobileNav
         isOpen={sideNav}
         exit={sideNavToggler}
-        menuListItems={categoriesMapper}
+        categories={categories}
       />
     </div>
   );
@@ -130,7 +116,7 @@ const SearchFlied = ({ isOpen, searchBtn }) => {
   );
 };
 
-const MobileNav = ({ menuListItems, isOpen, exit }) => {
+const MobileNav = ({ categories, isOpen, exit }) => {
   const toggler = isOpen ? "--open-nav" : "--close-nav";
   return (
     <div className={`side-nav ${toggler}`}>
@@ -143,7 +129,7 @@ const MobileNav = ({ menuListItems, isOpen, exit }) => {
             <div className="tabs-shop">
               <p>SHOP</p>
             </div>
-            <div className="tabs-about">
+            <div onClick={() => exit()} className="tabs-about">
               <Link to="/about">
                 <p>ABOUT US</p>
               </Link>
@@ -151,12 +137,7 @@ const MobileNav = ({ menuListItems, isOpen, exit }) => {
           </div>
         </div>
         <div className="side-nav--menu">
-          <ul>
-            <li>
-              <Link to="/shop/surfboards">Surfboards</Link>
-            </li>
-            {menuListItems}
-          </ul>
+          <MenuListItems categories={categories} exit={exit} isSideNav={true} />
         </div>
       </div>
       <p className="side-nav--footer">Made For Surfers, By Surfers</p>
@@ -215,3 +196,41 @@ const Footer = () => {
     </div>
   );
 };
+
+const MenuListItems = ({ categories, exit, isSideNav = false }) => {
+  if (isSideNav) {
+    const categoriesMapper = categories.map(cat => {
+      return (
+        <li onClick={() => exit()} key={`sidecat${cat.id}`}>
+          <Link to={`/shop/surfboards/${cat.id}`}>{cat.name}</Link>
+        </li>
+      );
+    });
+    return (
+      <ul>
+        <li onClick={() => exit()}>
+          <Link to="/shop/surfboards">Surfboards</Link>
+        </li>
+        {categoriesMapper}
+      </ul>
+    );
+  } else {
+    const categoriesMapper = categories.map(cat => {
+      return (
+        <li key={`cat${cat.id}`}>
+          <Link to={`/shop/surfboards/${cat.id}`}>{cat.name}</Link>
+        </li>
+      );
+    });
+    return (
+      <ul className="nav--items">
+        <li>
+          <Link to="/shop/surfboards">Surfboards</Link>
+        </li>
+        {categoriesMapper}
+      </ul>
+    );
+  }
+};
+
+export default Layout;
