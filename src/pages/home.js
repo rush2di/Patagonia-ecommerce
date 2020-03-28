@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Spinner from "../components/spinner";
-import heroBg from "../assets/images/image4.webp";
+import heroBg from "../assets/images/image4.jpg";
 import mainBg from "../assets/images/image5.webp";
 import image1 from "../assets/images/image1.webp";
 import image2 from "../assets/images/image2.webp";
@@ -17,10 +17,16 @@ const Home = () => {
   const { categories: cards } = useContext(DataContext);
   const [state, setState] = useState({ data: [], hasError: false });
   const covers = [softechBg, rrdBg, libtechBg];
-  const routeParams = {
-    pathname: `/shop/surfboard/${cards[0].products[2].refrence}`,
-    state: cards[0].products[2]
-  };
+  const routeParams = [
+    {
+      pathname: `/shop/surfboard/${cards[2].products[0].refrence}`,
+      state: cards[2].products[0]
+    },
+    {
+      pathname: `/shop/surfboard/${cards[0].products[2].refrence}`,
+      state: cards[0].products[2]
+    }
+  ];
   const styles = {
     backgroundImage: `url(${mainBg})`,
     height: 395
@@ -55,10 +61,27 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <div
-        className="main--hero"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      ></div>
+      <div className="main--hero" style={{ backgroundImage: `url(${heroBg})` }}>
+        <div className="main--hero-over">
+          <div className="container">
+            <div className="main--hero-over-txt">
+              <h1>
+                WE HAVE
+                <br />
+                THE WORKS
+              </h1>
+              <p>ITS ALL FUN AND GAMES UNTIL YOU CATCH TOO MUCH AIR</p>
+              <Link to={routeParams[0]}>
+                <button>LOST SWORDFISH</button>
+              </Link>
+            </div>
+            <div className="main--hero-over-comp">
+              <span>TAKE A DEEPER LOOK AT THE</span>
+              <span>LIB-TECH SURFBOARDS</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="main--section-intro">
         <div className="main--section-intro-box">
           <div>
@@ -88,7 +111,7 @@ const Home = () => {
               <h3>NO MORE BAILOUTS</h3>
               <p>slide your way to mastery with the new Mason Twin v2</p>
               <button>
-                <Link to={routeParams}>DISCOVER NOW</Link>
+                <Link to={routeParams[1]}>DISCOVER NOW</Link>
               </button>
             </div>
           </div>
