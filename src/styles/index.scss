@@ -162,7 +162,7 @@ html {
       height: 0px;
       width: 100%;
       position: relative;
-      z-index: 0;
+      z-index: 1;
       .search-field-drawer {
         width: 100%;
         background: white;
@@ -195,9 +195,12 @@ html {
         padding: 0.5rem 2rem;
         cursor: pointer;
         font-weight: 600;
+        font-size: 0.8rem;
         font-family: $font-two;
         &:hover {
-          background-color: #0000000c;
+          background: #000000;
+          color: white;
+          border: 2px solid black;
         }
       }
     }
@@ -517,7 +520,52 @@ html {
 .main {
   &--hero {
     height: calc(100vh - 87px);
-    @include cover-poser;
+    @include cover-poser(center);
+  }
+  &--hero-over {
+    @include cover-overtop();
+    font-family: $font-two;
+    background: #0000006e;
+    z-index: 0;
+  }
+  &--hero-over-txt {
+    display: flex;
+    flex-direction: column;
+    left: 5rem !important;
+    right: 5rem !important;
+    @include cover-heading();
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    p {
+      letter-spacing: 0.1rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-left: 0.5rem;
+      margin-bottom: 1.75rem;
+      margin-top: 1.25rem;
+    }
+    button {
+      background-color: #171717;
+      letter-spacing: 0.5px;
+      margin-left: 0.5rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: #ccc;
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      border: 0;
+      &:hover {
+        background-color: #444444;
+        color: #fff;
+      }
+    }
+  }
+  &--hero-over-comp {
+    @include cover-comptext();
   }
   &--section-intro {
     padding: 4rem 0 4.5rem;
@@ -541,6 +589,9 @@ html {
         width: 190px;
         display: inline-block;
         margin-bottom: 1rem;
+      }
+      a {
+        align-self: baseline;
       }
       button {
         background: #000000;
@@ -696,7 +747,9 @@ html {
         border: 1.5px solid;
         background: transparent;
         &:hover {
-          background: #0000001a;
+          background: #000000;
+          color: white;
+          border: 1.5px solid black;
         }
       }
     }
@@ -743,6 +796,15 @@ html {
     }
   }
   @media (max-width: 1200px) {
+    .main--hero {
+      &-over-txt {
+        left: 3rem !important;
+        right: 3rem !important;
+      }
+      &-over-comp {
+        right: 3rem;
+      }
+    }
     .instagram {
       &--grid {
         grid-template-columns: repeat(3, 1fr);
@@ -766,6 +828,26 @@ html {
   @media (max-width: 768px) {
     .main--hero {
       height: 50vh;
+      &-over-txt {
+        left: 1.5rem !important;
+        right: 1.5rem !important;
+        top: 2rem;
+        h1 {
+          font-size: 2.25rem;
+        }
+        p {
+          font-size: 0.75rem;
+          line-height: 1.5;
+          width: 65vw;
+        }
+        button {
+          height: 40px;
+        }
+      }
+      &-over-comp {
+        font-size: 0.75rem;
+        right: 2rem;
+      }
     }
     .main--section-intro {
       &-box {
@@ -883,7 +965,14 @@ html {
     .main--section-instagram .container {
       padding: 0 0.5rem;
       .instagram--grid {
-        grid-gap: 0.5rem;
+        grid-gap: 0.15rem;
+      }
+      .instagram--img {
+        img {
+          width: inherit;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
